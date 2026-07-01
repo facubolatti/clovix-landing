@@ -153,7 +153,7 @@ export default function Home() {
       {/* Nav */}
       <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Image src="/logo.png" alt="Clovix" width={200} height={60} priority />
+          <Image src="/logo.png" alt="Clovix" width={180} height={54} priority />
           <div className="hidden items-center gap-8 text-sm font-medium text-clovix-black md:flex">
             <a href="#modulos" className="hover:text-clovix-blue">
               Soluciones
@@ -209,10 +209,10 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center">
             <Image
-              src="/logo.png"
+              src="/icon.png"
               alt="Clovix"
-              width={420}
-              height={140}
+              width={300}
+              height={300}
               priority
             />
           </div>
