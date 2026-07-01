@@ -153,7 +153,7 @@ export default function Home() {
       {/* Nav */}
       <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Image src="/logo.png" alt="Clovix" width={120} height={32} priority />
+          <Image src="/logo.png" alt="Clovix" width={200} height={60} priority />
           <div className="hidden items-center gap-8 text-sm font-medium text-clovix-black md:flex">
             <a href="#modulos" className="hover:text-clovix-blue">
               Soluciones
@@ -176,35 +176,46 @@ export default function Home() {
 
       {/* Hero */}
       <section className="bg-clovix-gray-light px-6 py-24">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <span className="mb-6 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-clovix-blue shadow-sm">
-            Plataforma SaaS para negocios de servicios
-          </span>
-          <h1 className="text-4xl font-bold tracking-tight text-clovix-black sm:text-5xl md:text-6xl">
-            La plataforma que conecta tu negocio con tus clientes
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-clovix-gray-text">
-            Nexo es la primera solución de Clovix: gestión de turnos, automatización
-            por WhatsApp, fidelización de clientes e inteligencia artificial en un
-            solo lugar.
-          </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a
-              href="#planes"
-              className="rounded-full bg-clovix-blue px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-blue-700"
-            >
-              Probá 15 días gratis
-            </a>
-            <a
-              href="#modulos"
-              className="rounded-full border border-clovix-black/15 bg-white px-8 py-3.5 text-base font-semibold text-clovix-black transition-colors hover:bg-black/5"
-            >
-              Ver soluciones
-            </a>
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+            <span className="mb-6 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-clovix-blue shadow-sm">
+              Plataforma SaaS para negocios de servicios
+            </span>
+            <h1 className="text-4xl font-bold tracking-tight text-clovix-black sm:text-5xl md:text-6xl">
+              La plataforma que conecta tu negocio con tus clientes
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-clovix-gray-text">
+              Nexo es la primera solución de Clovix: gestión de turnos, automatización
+              por WhatsApp, fidelización de clientes e inteligencia artificial en un
+              solo lugar.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#planes"
+                className="rounded-full bg-clovix-blue px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-blue-700"
+              >
+                Probá 15 días gratis
+              </a>
+              <a
+                href="#modulos"
+                className="rounded-full border border-clovix-black/15 bg-white px-8 py-3.5 text-base font-semibold text-clovix-black transition-colors hover:bg-black/5"
+              >
+                Ver soluciones
+              </a>
+            </div>
+            <p className="mt-4 text-sm text-clovix-gray-text">
+              Sin tarjeta de crédito · Sin compromisos
+            </p>
           </div>
-          <p className="mt-4 text-sm text-clovix-gray-text">
-            Sin tarjeta de crédito · Sin compromisos
-          </p>
+          <div className="flex items-center justify-center">
+            <Image
+              src="/logo.png"
+              alt="Clovix"
+              width={420}
+              height={140}
+              priority
+            />
+          </div>
         </div>
       </section>
 
