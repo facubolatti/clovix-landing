@@ -9,18 +9,21 @@ const soluciones = [
     nombre: "Clovix Nexo",
     desc: "Gestión de turnos, clientes y automatización WhatsApp para negocios de servicios.",
     href: "/nexo",
+    badge: null,
   },
   {
     logo: "/clovix_contable.svg",
     nombre: "Clovix Contable",
     desc: "Facturación, cobros y gestión contable integrada.",
     href: null,
+    badge: "En Desarrollo",
   },
   {
     logo: "/clovix_analytics.svg",
     nombre: "Clovix Analytics",
     desc: "Métricas avanzadas y business intelligence para tu negocio.",
     href: null,
+    badge: "Próximamente",
   },
 ];
 
@@ -57,6 +60,9 @@ export default function Home() {
             <h1 className="text-4xl font-bold tracking-tight text-clovix-black sm:text-5xl md:text-6xl">
               La plataforma que conecta tu negocio con tus clientes
             </h1>
+            <p className="mt-6 w-full text-center text-xl italic text-gray-400">
+              Software que gestiona. Inteligencia que fideliza. Vínculos que duran.
+            </p>
             <p className="mt-6 max-w-2xl text-lg text-clovix-gray-text">
               Soluciones inteligentes para gestionar, automatizar y hacer crecer tu
               negocio de servicios.
@@ -67,12 +73,6 @@ export default function Home() {
                 className="rounded-full bg-clovix-blue px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-blue-700"
               >
                 Ver soluciones
-              </a>
-              <a
-                href="#contacto"
-                className="rounded-full border border-clovix-black/15 bg-white px-8 py-3.5 text-base font-semibold text-clovix-black transition-colors hover:bg-black/5"
-              >
-                Contactanos
               </a>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function Home() {
                     </Link>
                   ) : (
                     <span className="rounded-full bg-clovix-gray-light px-4 py-1.5 text-sm font-medium text-clovix-gray-text">
-                      Próximamente
+                      {s.badge}
                     </span>
                   )}
                 </div>
@@ -126,10 +126,11 @@ export default function Home() {
       <section id="por-que-clovix" className="bg-clovix-gray-light px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-3xl font-bold text-clovix-black sm:text-4xl">
-            Por qué Clovix
+            El enfoque Clovix
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-clovix-gray-text">
-            Porque gestionar un negocio de servicios no debería ser complicado.
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg italic text-gray-500">
+            Donde la gestión inteligente y la experiencia del cliente se unen para
+            crear vínculos que duran.
           </p>
           <div className="mt-14 grid gap-10 md:grid-cols-3">
             {pilares.map((p) => (
@@ -145,7 +146,26 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      {/* CTA final */}
+      <section className="px-6 py-24">
+        <div className="mx-auto max-w-3xl rounded-3xl bg-clovix-blue px-6 py-16 text-center sm:px-14">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+            Empezá a conectar tu negocio hoy
+          </h2>
+          <p className="mt-4 text-lg italic text-gray-200">
+            El punto donde la tecnología y el arte de fidelizar clientes se
+            convierten en vínculos que duran.
+          </p>
+          <a
+            href="#contacto"
+            className="mt-8 inline-block rounded-full bg-white px-8 py-3.5 text-base font-semibold text-clovix-blue transition-colors hover:bg-white/90"
+          >
+            Contactanos
+          </a>
+        </div>
+      </section>
+
+      <Footer showLogo={false} />
     </div>
   );
 }
