@@ -160,14 +160,11 @@ export default function NexoPage() {
       {/* Hero Nexo */}
       <section className="bg-clovix-gray-light px-6 py-24">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <span className="mb-6 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-clovix-blue shadow-sm">
-            Clovix Nexo
-          </span>
           <Image
             src="/clovix_nexo.svg"
             alt="Clovix Nexo"
-            width={160}
-            height={48}
+            width={200}
+            height={60}
             className="mb-6"
             priority
           />
