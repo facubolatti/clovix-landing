@@ -4,9 +4,11 @@ import Link from "next/link";
 export function Nav({
   breadcrumb,
   ctaHref,
+  ctaLabel = "Empezar gratis",
 }: {
   breadcrumb?: string;
   ctaHref: string;
+  ctaLabel?: string;
 }) {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
@@ -40,7 +42,7 @@ export function Nav({
           href={ctaHref}
           className="rounded-full bg-clovix-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
         >
-          Empezar gratis
+          {ctaLabel}
         </a>
       </nav>
     </header>

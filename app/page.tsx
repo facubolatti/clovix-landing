@@ -45,7 +45,7 @@ const pilares = [
 export default function Home() {
   return (
     <div className="flex flex-col flex-1">
-      <Nav ctaHref="/nexo#planes" />
+      <Nav ctaHref="#contacto" ctaLabel="Contactanos" />
 
       {/* Hero */}
       <section className="bg-clovix-gray-light px-6 py-24">
@@ -128,6 +128,9 @@ export default function Home() {
           <h2 className="text-center text-3xl font-bold text-clovix-black sm:text-4xl">
             Por qué Clovix
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-clovix-gray-text">
+            Porque gestionar un negocio de servicios no debería ser complicado.
+          </p>
           <div className="mt-14 grid gap-10 md:grid-cols-3">
             {pilares.map((p) => (
               <div key={p.title} className="text-center">
