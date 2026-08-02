@@ -128,21 +128,18 @@ export default function Page() {
         <div className="section-head rv">
           <span className="eyebrow">Productos</span>
           <h2 style={{marginTop: '16px'}}>Un ecosistema, no un programa más</h2>
-          <p className="lead">Tres frentes del mismo negocio sobre la misma base de datos. Nexo está funcionando hoy; los otros dos se suman cuando los necesites, sin migrar nada.</p>
+          <p className="lead">Tres soluciones sobre una sola base de datos: la operación, la administración y los números. Lo que cargás una vez sirve en las tres.</p>
         </div>
         <Link href="/soluciones" className="card rv" style={{padding: 'clamp(30px,4vw,44px)', display: 'block'}}>
           <div className="cards c3" style={{gap: '20px', alignItems: 'center'}}>
             <div style={{textAlign: 'center'}}>
               <span className="mark l-nexo c" style={{width: '100%', maxWidth: '168px', height: '50px', margin: '0 auto'}} role="img" aria-label="Clovix Nexo"></span>
-              <span className="tag live" style={{marginTop: '14px', display: 'inline-flex'}}><i className="dot-ok"></i> Disponible</span>
             </div>
             <div style={{textAlign: 'center'}}>
               <span className="mark l-contable c" style={{width: '100%', maxWidth: '168px', height: '50px', margin: '0 auto'}} role="img" aria-label="Clovix Contable"></span>
-              <span className="tag" style={{marginTop: '14px', display: 'inline-block'}}>En desarrollo</span>
             </div>
             <div style={{textAlign: 'center'}}>
               <span className="mark l-analytics c" style={{width: '100%', maxWidth: '168px', height: '50px', margin: '0 auto'}} role="img" aria-label="Clovix Analytics"></span>
-              <span className="tag" style={{marginTop: '14px', display: 'inline-block'}}>Próximamente</span>
             </div>
           </div>
           <p className="center" style={{marginTop: '30px'}}>

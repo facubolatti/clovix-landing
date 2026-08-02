@@ -37,8 +37,8 @@ export default function Page() {
       <div className="wrap">
         <div className="hero-stack">
           <span className="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg><em>SaaS Products</em><span className="sep">·</span>Productos Clovix</span>
-          <h1>Un sistema por cada frente<br /><span className="grad-text">del mismo negocio</span></h1>
-          <p className="lead">Nexo ya está funcionando. Contable y Analytics vienen después, sobre la misma base de datos: se suman cuando los necesitás, sin migrar nada y sin cambiar de forma de trabajar.</p>
+          <h1>Un ecosistema que<br /><span className="grad-text">crece con tu negocio</span></h1>
+          <p className="lead">La operación, la administración y los números sobre una sola base de datos. Sumás la solución que necesitás sin cambiar de sistema ni volver a capacitar al equipo.</p>
           <div className="hero-cta">
             <a href="#saas" className="btn btn-grad">Ver el ecosistema</a>
             <Link href="/nexo" className="btn btn-ghost">Conocer Nexo</Link>
@@ -50,7 +50,7 @@ export default function Page() {
         <div className="section-head rv" style={{marginBottom: '24px'}}>
           <span className="eyebrow">SaaS Products</span>
           <h2 style={{marginTop: '12px', fontSize: 'clamp(1.8rem,3vw,2.5rem)'}}>El ecosistema Clovix</h2>
-          <p className="lead">Tres frentes del mismo negocio, sobre la misma base y la misma forma de trabajar.</p>
+          <p className="lead">Tres soluciones que comparten los mismos clientes, los mismos datos y la misma forma de trabajar.</p>
         </div>
         <div className="cards c3 tight">
           <div className="card prod rv">
@@ -59,20 +59,19 @@ export default function Page() {
             <div className="prod-list"><span className="chip">Agenda</span><span className="chip">WhatsApp</span><span className="chip">Fichas</span><span className="chip">Cobros</span><span className="chip">IA</span></div>
             <div className="prod-foot">
               <Link href="/nexo" className="btn btn-ink btn-sm">Ver todo lo que hace</Link>
-              <span className="tag live"><i className="dot-ok"></i> Disponible</span>
             </div>
           </div>
           <div className="card prod emerald rv">
             <span className="mark l-contable" role="img" aria-label="Clovix Contable"></span>
             <p>Facturación, libro de caja e impuestos que se alimentan de lo que ya pasó en la agenda. Sin volver a cargar un solo importe.</p>
             <div className="prod-list"><span className="chip">Facturación</span><span className="chip">Libro de caja</span><span className="chip">Impuestos</span><span className="chip">Conciliación</span></div>
-            <div className="prod-foot"><span className="tag">En desarrollo</span><Link href="/#contacto" style={{fontSize: '.8rem', color: 'var(--blue)', fontWeight: '600'}}>Avisame cuando esté</Link></div>
+            <div className="prod-foot"><Link href="/#contacto" className="btn btn-line btn-sm">Quiero saber más</Link></div>
           </div>
           <div className="card prod amber rv">
             <span className="mark l-analytics" role="img" aria-label="Clovix Analytics"></span>
             <p>Métricas avanzadas sobre los datos que el negocio ya genera: qué servicio sostiene la caja, qué cliente vuelve y qué mes conviene empujar.</p>
             <div className="prod-list"><span className="chip">Tableros</span><span className="chip">Cohortes</span><span className="chip">Proyecciones</span><span className="chip">Comparativas</span></div>
-            <div className="prod-foot"><span className="tag">Próximamente</span><Link href="/#contacto" style={{fontSize: '.8rem', color: 'var(--blue)', fontWeight: '600'}}>Avisame cuando esté</Link></div>
+            <div className="prod-foot"><Link href="/#contacto" className="btn btn-line btn-sm">Quiero saber más</Link></div>
           </div>
         </div>
       </div>
@@ -85,11 +84,11 @@ export default function Page() {
         </div>
         <div className="cards c3">
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div><h3>Una sola base de datos</h3>
-            <p>El cliente, el turno y el cobro son el mismo dato. Cuando llegue Contable no hay que migrar nada ni volver a cargar un solo importe: ya está ahí.</p></div>
+            <p>El cliente, el turno y el cobro son el mismo dato. El día que sumás Contable no hay que migrar nada ni volver a cargar un solo importe: ya está ahí.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div><h3>Se suman de a uno</h3>
             <p>Empezás por Nexo y el resto se activa cuando tu negocio lo pida. Sin cambiar de sistema, sin volver a capacitar al equipo y sin un proyecto de migración.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>La misma IA adentro</h3>
-            <p>Lo que hoy corre en Nexo —visión sobre imágenes, detección de patrones y generación de texto— se aplica a lo que venga. La inteligencia es de la plataforma, no de un módulo.</p></div>
+            <p>Visión sobre imágenes, detección de patrones y generación de texto: la inteligencia es de la plataforma, no de un módulo, así que se aplica a todo lo que se sume.</p></div>
         </div>
       </div>
       </section><section className="section" style={{paddingTop: '0'}}>
@@ -102,7 +101,7 @@ export default function Page() {
       <circle cx="60" cy="60" r="15" fill="none" stroke="url(#ng)" strokeWidth="5"/>
       <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg>
           <h2>Empecemos por Nexo</h2>
-          <p className="slogan">Es el que está funcionando hoy, y el que ordena la operación desde el primer día. El resto llega cuando tu negocio lo pida.</p>
+          <p className="slogan">Es el que ordena la operación desde el primer día: turnos, clientes y WhatsApp trabajando solos mientras vos atendés.</p>
           <div className="btns"><a href="https://nexo.clovix.app/sign_up" className="btn btn-white">Probar 15 días gratis</a><Link href="/#contacto" className="btn btn-ghost">Hablar con nosotros</Link></div>
         </div>
       </div>
