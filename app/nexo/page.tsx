@@ -1,404 +1,246 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 
-const SIGNUP_URL = "https://nexo.clovix.app/sign_up";
-const LOGIN_URL = "https://nexo.clovix.app/login";
+export const metadata: Metadata = {
+  title: "Clovix Nexo — Turnos, WhatsApp y fidelización",
+  description: "Nexo es la solución SaaS de Clovix: gestión de turnos, automatización por WhatsApp, fidelización de clientes e inteligencia artificial en un solo lugar.",
+  alternates: { canonical: "/nexo" },
+  openGraph: {
+    title: "Clovix Nexo — Turnos, WhatsApp y fidelización",
+    description: "Nexo es la solución SaaS de Clovix: gestión de turnos, automatización por WhatsApp, fidelización de clientes e inteligencia artificial en un solo lugar.",
+    url: "/nexo",
+    siteName: "Clovix",
+    locale: "es_AR",
+    type: "website",
+  },
+}
 
-const preguntas = [
-  {
-    q: "¿Sabés qué pasa con tu cliente cuando no vuelve?",
-    a: "Nexo detecta inactividad y te avisa antes de que el cliente elija a otro.",
-  },
-  {
-    q: "¿Cuánto hace que no te visita?",
-    a: "Sabés cuántos turnos tuvo, cuándo fue el último y qué servicio prefiere.",
-  },
-  {
-    q: "¿Generaste algún vínculo real?",
-    a: "Un recordatorio antes del turno, un mensaje después del servicio, una encuesta. Nexo lo hace solo.",
-  },
-  {
-    q: "¿Cuánto tardás en coordinar un turno por WhatsApp?",
-    a: "Con el portal de reservas, el cliente reserva solo. Sin idas y vueltas.",
-  },
-  {
-    q: "¿Tus clientes te dicen cómo les fue?",
-    a: "Nexo envía encuestas automáticas y registra cada respuesta.",
-  },
-  {
-    q: "¿Sabés qué profesional tiene mejor calificación?",
-    a: "Los datos de satisfacción por profesional están siempre disponibles.",
-  },
-];
-
-const pilares = [
-  {
-    icon: "📅",
-    title: "Conecta tu agenda con tus clientes",
-    desc: "Turnos online, recordatorios automáticos por WhatsApp y mensajes post-servicio.",
-  },
-  {
-    icon: "💬",
-    title: "Conecta la experiencia con datos reales",
-    desc: "Encuestas de satisfacción, calificación de profesionales y alertas en tiempo real.",
-  },
-  {
-    icon: "📊",
-    title: "Conecta tu negocio con la retención",
-    desc: "CRM integrado, clientes en riesgo, campañas push y acciones automáticas.",
-  },
-];
-
-const modulos = [
-  {
-    icon: "📅",
-    title: "Agenda y turnos",
-    desc: "Calendario por profesional, slots de 15 min, bloqueos y control total de tu agenda.",
-  },
-  {
-    icon: "👥",
-    title: "Gestión de clientes",
-    desc: "Base de clientes, historial completo, clasificación y seguimiento de inactividad.",
-  },
-  {
-    icon: "📱",
-    title: "WhatsApp automático",
-    desc: "Recordatorios pre-turno, mensajes post-servicio, encuestas y respuestas automáticas.",
-  },
-  {
-    icon: "📋",
-    title: "Ficha cosmiátrica",
-    desc: "Historial clínico, sesiones, consentimientos, fotos comparativas e informes con IA.",
-  },
-  {
-    icon: "📊",
-    title: "Reportes y métricas",
-    desc: "Dashboard en tiempo real, satisfacción, calificación de profesionales y control de turnos.",
-  },
-  {
-    icon: "🌐",
-    title: "Portal de reservas",
-    desc: "Tus clientes reservan solos, 24/7, desde cualquier dispositivo.",
-  },
-  {
-    icon: "💰",
-    title: "Cobranzas y caja",
-    desc: "Efectivo, transferencia y Mercado Pago. Señas, saldos y cierre de caja integrado.",
-  },
-  {
-    icon: "📣",
-    title: "Campañas push",
-    desc: "Mensajes masivos por WhatsApp para clientes activos o en riesgo de abandono.",
-  },
-];
-
-const iaFeatures = [
-  "Comparativa de fotos entre sesiones para visualizar la evolución del tratamiento.",
-  "Informe avanzado para el profesional con análisis clínico de cada paciente.",
-  "Informe personalizado para el paciente comparando imágenes de distintas sesiones.",
-  "Historial clínico completo con consentimientos y control de sesiones integrado.",
-];
-
-const planes = [
-  {
-    nombre: "Inicial",
-    precio: "$80.000",
-    destacado: false,
-    limites: ["2 profesionales", "400 turnos/mes", "600 WhatsApp/mes", "10 informes IA"],
-    incluye: [
-      "Dashboard",
-      "Turnos",
-      "Clientes",
-      "Fichas",
-      "WhatsApp automático",
-    ],
-    noIncluye: ["CRM", "Campañas push", "Portal de reservas"],
-  },
-  {
-    nombre: "Profesional",
-    precio: "$120.000",
-    destacado: true,
-    limites: [
-      "5 profesionales",
-      "1200 turnos/mes",
-      "3000 WhatsApp/mes",
-      "200 push/mes",
-      "50 informes IA",
-    ],
-    incluye: [
-      "Todo lo de Inicial",
-      "CRM",
-      "Cobros",
-      "Encuestas",
-      "Campañas",
-      "Calificación",
-    ],
-    noIncluye: ["Portal de reservas"],
-  },
-  {
-    nombre: "Premium",
-    precio: "$150.000",
-    destacado: false,
-    limites: [
-      "10 profesionales",
-      "2500 turnos/mes",
-      "7000 WhatsApp/mes",
-      "500 push/mes",
-      "50 informes IA",
-    ],
-    incluye: ["Todo completo", "Portal de reservas público"],
-    noIncluye: [],
-  },
-];
-
-export default function NexoPage() {
+export default function Page() {
   return (
-    <div className="flex flex-col flex-1">
-      <Nav breadcrumb="Clovix / Nexo" ctaHref={SIGNUP_URL} />
-
-      {/* Hero Nexo */}
-      <section className="bg-clovix-gray-light px-6 py-24">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <Image
-            src="/clovix_nexo.svg"
-            alt="Clovix Nexo"
-            width={200}
-            height={60}
-            className="mb-6"
-            priority
-          />
-          <h1 className="text-4xl font-bold tracking-tight text-clovix-black sm:text-5xl md:text-6xl">
-            La plataforma que conecta tu negocio con tus clientes
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-clovix-gray-text">
-            Turnos, WhatsApp, encuestas, fichas y métricas en un solo lugar.
-          </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a
-              href={SIGNUP_URL}
-              className="rounded-full bg-clovix-blue px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-blue-700"
-            >
-              Empezar gratis
-            </a>
-            <a
-              href={LOGIN_URL}
-              className="rounded-full border border-clovix-black/15 bg-white px-8 py-3.5 text-base font-semibold text-clovix-black transition-colors hover:bg-black/5"
-            >
-              Ya soy usuario
-            </a>
+    <>
+      <Nav items={[{ label: "Módulos", href: "#modulos" }, { label: "Planes", href: "#planes" }, { label: "Preguntas", href: "#faq" }, { label: "Portfolio", href: "/soluciones" }]} crumb="Clovix / Portfolio / Nexo" cta={{ href: "https://nexo.clovix.app/sign_up", label: "Empezar gratis" }} extra={{ href: "https://nexo.clovix.app/login", label: "Ingresar" }} />
+      <section className="dark hero">
+      <svg className="nodes a" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stopColor="#3B6FE8"/><stop offset="1" stopColor="#7B5CF0"/></linearGradient></defs>
+      <line x1="60.00" y1="21.00" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="40.50" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="79.50" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="99.00" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="79.50" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="40.50" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="42.80" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="51.40" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="68.60" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="60.00" y1="77.20" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="68.60" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="51.40" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><circle cx="60.00" cy="21.00" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="40.50" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="60.00" cy="99.00" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="40.50" r="7.4" fill="url(#ng)"/>
+      <circle cx="60" cy="60" r="15" fill="none" stroke="url(#ng)" strokeWidth="5"/>
+      <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg><svg className="nodes b" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stopColor="#3B6FE8"/><stop offset="1" stopColor="#7B5CF0"/></linearGradient></defs>
+      <line x1="60.00" y1="21.00" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="40.50" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="79.50" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="99.00" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="79.50" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="40.50" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="42.80" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="51.40" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="68.60" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="60.00" y1="77.20" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="68.60" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="51.40" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><circle cx="60.00" cy="21.00" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="40.50" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="60.00" cy="99.00" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="40.50" r="7.4" fill="url(#ng)"/>
+      <circle cx="60" cy="60" r="15" fill="none" stroke="url(#ng)" strokeWidth="5"/>
+      <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg>
+      <div className="grid-lines"></div>
+      <div className="wrap wrap-wide hero-grid">
+        <div>
+          <span className="mark l-nexo-d" style={{width: '196px', height: '60px', marginBottom: '24px'}}></span>
+          <h1>La plataforma que <span className="grad-text">conecta tu negocio</span> con tus clientes</h1>
+          <p className="lead" style={{marginTop: '20px'}}>Turnos, WhatsApp, encuestas, fichas y métricas en un solo lugar. El sistema que trabaja mientras vos atendés.</p>
+          <div className="hero-cta">
+            <a href="https://nexo.clovix.app/sign_up" className="btn btn-grad">Empezar gratis</a>
+            <a href="https://nexo.clovix.app/login" className="btn btn-ghost">Ya soy usuario</a>
           </div>
-          <p className="mt-4 text-sm text-clovix-gray-text">
-            15 días gratis · Sin tarjeta de crédito
-          </p>
+          <div className="hero-note">
+            <span><i className="dot-ok"></i> 15 días gratis</span>
+            <span><i className="dot-ok"></i> Sin tarjeta de crédito</span>
+            <span><i className="dot-ok"></i> Cancelás cuando querés</span>
+          </div>
         </div>
-      </section>
-
-      {/* Preguntas */}
-      <section className="bg-clovix-black px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-bold text-white sm:text-4xl">
-            Lo que tu negocio necesita saber
-          </h2>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {preguntas.map((p) => (
-              <div
-                key={p.q}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6"
-              >
-                <h3 className="text-lg font-semibold text-white">{p.q}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/60">{p.a}</p>
+        <div className="stage">
+          <div className="win">
+            <div className="win-bar"><i></i><i></i><i></i><span className="win-url">nexo.clovix.app/turnos/agenda</span></div>
+            <div className="app">
+        <div className="app-rail"><span className="r-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L20 7"/></svg></span><span className="r-i on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span className="r-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.87"/></svg></span><span className="r-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5M9 13h6M9 17h4"/></svg></span><span className="r-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg></span></div>
+        <div className="app-main">
+          <div className="app-top">
+            <div><b>Agenda de la semana</b><span className="sub">28 jul – 1 ago · 5 profesionales</span></div>
+            <div className="avs"><span className="av" style={{background: '#7B5CF0'}}>SM</span><span className="av" style={{background: '#3B6FE8'}}>JL</span><span className="av" style={{background: '#12B886'}}>RM</span><span className="av more">+2</span></div>
+          </div>
+          <div className="pillbar"><span className="on">Semana</span><span>Día</span><span>Mes</span><span>Todos los profesionales</span></div>
+          <div className="cal"><div className="cal-h"></div><div className="cal-h"><em>lun</em><b>28</b></div><div className="cal-h"><em>mar</em><b>29</b></div><div className="cal-h"><em>mié</em><b>30</b></div><div className="cal-h today"><em>jue</em><b>31</b></div><div className="cal-h"><em>vie</em><b>01</b></div><div className="cal-t">09:00</div><div className="cal-c"><div className="ev v"><span className="tick" style={{background: '#D1FAE5', color: '#0d7a5b'}}>✓</span><b>Sofía R.</b><span>Color + corte</span></div></div><div className="cal-c"></div><div className="cal-c"><div className="ev p"><b>Rocío D.</b><span>Depilación</span></div></div><div className="cal-c"></div><div className="cal-c"><div className="ev a"><b>Lucía F.</b><span>Uñas gel</span></div></div><div className="cal-t">10:00</div><div className="cal-c"></div><div className="cal-c"><div className="ev e"><span className="tick" style={{background: '#D1FAE5', color: '#0d7a5b'}}>✓</span><b>Julia M.</b><span>Limpieza facial</span></div></div><div className="cal-c"></div><div className="cal-c"><div className="ev b"><span className="tick" style={{background: '#DCFCE7', color: '#128C7E'}}>◗</span><b>Carla V.</b><span>Diseño cejas</span></div></div><div className="cal-c"></div><div className="cal-t">11:00</div><div className="cal-c"><div className="ev b"><b>Ana P.</b><span>Manicura</span></div></div><div className="cal-c"></div><div className="cal-c"><div className="ev v"><span className="tick" style={{background: '#D1FAE5', color: '#0d7a5b'}}>✓</span><b>Malena T.</b><span>Brushing</span></div></div><div className="cal-c"><div className="ev e"><b>Inés G.</b><span>Peeling</span></div></div><div className="cal-c"></div><div className="cal-t">12:00</div><div className="cal-c"></div><div className="cal-c"><div className="ev a"><b>Belén C.</b><span>Lifting pestañas</span></div></div><div className="cal-c"></div><div className="cal-c"></div><div className="cal-c"><div className="ev v"><span className="tick" style={{background: '#D1FAE5', color: '#0d7a5b'}}>✓</span><b>Paula N.</b><span>Corte</span></div></div><div className="nowline" style={{top: 'calc(33px + 42px + 26px)'}}><em>11:20</em></div></div>
+        </div>
+      </div>
+          </div>
+          <div className="float f1">
+            <div className="f-top"><span className="f-ico" style={{background: 'rgba(123,92,240,.12)', color: '#7B5CF0'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v14"/></svg></span>Cliente en riesgo</div>
+            <div className="f-big" style={{fontSize: '1rem', lineHeight: '1.35'}}>3 meses sin volver</div>
+            <div className="f-sub" style={{marginTop: '6px'}}>Nexo propone un cupón del 20%</div>
+          </div>
+          <div className="float f2">
+            <div className="f-top"><span className="f-ico" style={{background: 'rgba(18,184,134,.12)', color: '#12B886'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v4M12 17v4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M3 12h4M17 12h4M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg></span>Satisfacción</div>
+            <div className="f-big">4,8<span style={{fontSize: '.9rem', color: 'var(--muted)'}}>/5</span></div>
+            <div className="spark"><i style={{height: '60%'}}></i><i style={{height: '72%'}}></i><i style={{height: '66%'}}></i><i style={{height: '84%'}}></i><i style={{height: '78%'}}></i><i style={{height: '90%'}}></i><i style={{height: '88%'}}></i></div>
+          </div>
+        </div>
+      </div>
+      </section><section className="dark section" style={{borderRadius: '34px', margin: '0 12px'}}>
+      <svg className="nodes b" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stopColor="#3B6FE8"/><stop offset="1" stopColor="#7B5CF0"/></linearGradient></defs>
+      <line x1="60.00" y1="21.00" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="40.50" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="79.50" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="99.00" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="79.50" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="40.50" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="42.80" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="51.40" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="68.60" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="60.00" y1="77.20" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="68.60" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="51.40" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><circle cx="60.00" cy="21.00" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="40.50" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="60.00" cy="99.00" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="40.50" r="7.4" fill="url(#ng)"/>
+      <circle cx="60" cy="60" r="15" fill="none" stroke="url(#ng)" strokeWidth="5"/>
+      <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg>
+      <div className="wrap">
+        <div className="section-head rv">
+          <span className="eyebrow">Diagnóstico</span>
+          <h2 style={{marginTop: '16px', color: '#fff'}}>Lo que tu negocio necesita saber</h2>
+          <p className="lead">Seis preguntas que casi ningún sistema de turnos puede responder.</p>
+        </div>
+        <div className="cards c3"><div className="card rv" style={{background: 'rgba(255,255,255,.045)', borderColor: 'rgba(255,255,255,.1)'}}><h3 style={{color: '#fff'}}>¿Sabés qué pasa con tu cliente cuando no vuelve?</h3><p style={{color: 'rgba(255,255,255,.6)'}}>Nexo detecta inactividad y te avisa antes de que el cliente elija a otro.</p></div><div className="card rv" style={{background: 'rgba(255,255,255,.045)', borderColor: 'rgba(255,255,255,.1)'}}><h3 style={{color: '#fff'}}>¿Cuánto hace que no te visita?</h3><p style={{color: 'rgba(255,255,255,.6)'}}>Sabés cuántos turnos tuvo, cuándo fue el último y qué servicio prefiere.</p></div><div className="card rv" style={{background: 'rgba(255,255,255,.045)', borderColor: 'rgba(255,255,255,.1)'}}><h3 style={{color: '#fff'}}>¿Generaste algún vínculo real?</h3><p style={{color: 'rgba(255,255,255,.6)'}}>Un recordatorio antes del turno, un mensaje después del servicio, una encuesta. Nexo lo hace solo.</p></div><div className="card rv" style={{background: 'rgba(255,255,255,.045)', borderColor: 'rgba(255,255,255,.1)'}}><h3 style={{color: '#fff'}}>¿Cuánto tardás en coordinar un turno por WhatsApp?</h3><p style={{color: 'rgba(255,255,255,.6)'}}>Con el portal de reservas, el cliente reserva solo. Sin idas y vueltas.</p></div><div className="card rv" style={{background: 'rgba(255,255,255,.045)', borderColor: 'rgba(255,255,255,.1)'}}><h3 style={{color: '#fff'}}>¿Tus clientes te dicen cómo les fue?</h3><p style={{color: 'rgba(255,255,255,.6)'}}>Nexo envía encuestas automáticas y registra cada respuesta.</p></div><div className="card rv" style={{background: 'rgba(255,255,255,.045)', borderColor: 'rgba(255,255,255,.1)'}}><h3 style={{color: '#fff'}}>¿Sabés qué profesional tiene mejor calificación?</h3><p style={{color: 'rgba(255,255,255,.6)'}}>Los datos de satisfacción por profesional están siempre disponibles.</p></div></div>
+      </div>
+      </section><section className="section">
+      <div className="wrap">
+        <div className="section-head rv">
+          <span className="eyebrow">Cómo funciona</span>
+          <h2 style={{marginTop: '16px'}}>Tres conexiones que cambian el día</h2>
+        </div>
+        <div className="cards c3">
+          <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>Conecta tu agenda con tus clientes</h3>
+            <p>Turnos online, recordatorios automáticos por WhatsApp y mensajes post-servicio.</p></div>
+          <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5z"/></svg></div><h3>Conecta la experiencia con datos reales</h3>
+            <p>Encuestas de satisfacción, calificación de profesionales y alertas en tiempo real.</p></div>
+          <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L20 7"/></svg></div><h3>Conecta tu negocio con la retención</h3>
+            <p>CRM integrado, clientes en riesgo, campañas push y acciones automáticas.</p></div>
+        </div>
+      </div>
+      </section><section className="section" style={{paddingTop: '0'}}>
+      <div className="wrap">
+        <div className="hero-grid" style={{alignItems: 'center'}}>
+          <div className="rv">
+            <span className="eyebrow">WhatsApp</span>
+            <h2 style={{marginTop: '16px'}}>Lo que tu cliente no ve, pero siente</h2>
+            <p className="lead" style={{marginTop: '18px'}}>Detrás de un recordatorio que llega a tiempo hay una agenda, una ficha, un historial y una automatización que nadie tuvo que apretar.</p>
+            <div style={{marginTop: '30px', display: 'flex', flexDirection: 'column', gap: '20px'}}>
+              <div style={{display: 'flex', gap: '14px', alignItems: 'flex-start'}}>
+                <span className="f-ico" style={{background: 'rgba(59,111,232,.1)', color: '#3B6FE8', width: '34px', height: '34px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <div><b style={{fontSize: '.96rem'}}>El día antes</b><p className="lead" style={{fontSize: '.9rem', marginTop: '3px'}}>Sale el recordatorio desde tu propia línea. El cliente confirma con un número.</p></div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Cómo funciona */}
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-bold text-clovix-black sm:text-4xl">
-            Cómo funciona
-          </h2>
-          <div className="mt-14 grid gap-10 md:grid-cols-3">
-            {pilares.map((p) => (
-              <div key={p.title} className="text-center">
-                <div className="text-4xl">{p.icon}</div>
-                <h3 className="mt-4 text-xl font-semibold text-clovix-black">
-                  {p.title}
-                </h3>
-                <p className="mt-3 text-clovix-gray-text">{p.desc}</p>
+              <div style={{display: 'flex', gap: '14px', alignItems: 'flex-start'}}>
+                <span className="f-ico" style={{background: 'rgba(123,92,240,.1)', color: '#7B5CF0', width: '34px', height: '34px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+                <div><b style={{fontSize: '.96rem'}}>Después del servicio</b><p className="lead" style={{fontSize: '.9rem', marginTop: '3px'}}>Llega la encuesta y la respuesta queda guardada en su ficha.</p></div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Módulos */}
-      <section className="bg-clovix-gray-light px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-bold text-clovix-black sm:text-4xl">
-            Módulos
-          </h2>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {modulos.map((m) => (
-              <div
-                key={m.title}
-                className="rounded-2xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="text-3xl">{m.icon}</div>
-                <h3 className="mt-4 text-lg font-semibold text-clovix-black">
-                  {m.title}
-                </h3>
-                <p className="mt-2 text-sm text-clovix-gray-text">{m.desc}</p>
+              <div style={{display: 'flex', gap: '14px', alignItems: 'flex-start'}}>
+                <span className="f-ico" style={{background: 'rgba(18,184,134,.1)', color: '#12B886', width: '34px', height: '34px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v14"/></svg></span>
+                <div><b style={{fontSize: '.96rem'}}>Cuando deja de venir</b><p className="lead" style={{fontSize: '.9rem', marginTop: '3px'}}>El sistema lo detecta y propone un cupón antes de que elija a otro.</p></div>
               </div>
-            ))}
+            </div>
+          </div>
+          <div className="stage win-flat rv">
+            <div className="win" style={{boxShadow: 'var(--shadow-lg)'}}>
+              <div className="win-bar"><i></i><i></i><i></i><span className="win-url">Recordatorio automático · 24 h antes</span></div>
+              <div style={{background: '#ECE5DD', padding: '14px', display: 'flex', flexDirection: 'column', gap: '9px'}}>
+      <div style={{maxWidth: '82%', padding: '8px 11px', borderRadius: '12px', borderTopRightRadius: '3px', fontSize: '.72rem', lineHeight: '1.45', background: '#D9FDD3', alignSelf: 'flex-end', boxShadow: '0 1px 1px rgba(0,0,0,.08)'}}>Hola Sofía 👋 Te recordamos tu turno de mañana a las 10:00 con Malena.<br />Respondé <b>1</b> para confirmar o <b>2</b> para reprogramar.<span style={{display: 'block', fontSize: '.58rem', color: '#8696A0', textAlign: 'right', marginTop: '3px'}}>09:02 ✓✓</span></div>
+      <div style={{maxWidth: '82%', padding: '8px 11px', borderRadius: '12px', borderTopLeftRadius: '3px', fontSize: '.72rem', background: '#fff', alignSelf: 'flex-start', boxShadow: '0 1px 1px rgba(0,0,0,.08)'}}>1<span style={{display: 'block', fontSize: '.58rem', color: '#8696A0', textAlign: 'right', marginTop: '3px'}}>09:14</span></div>
+      <div style={{maxWidth: '82%', padding: '8px 11px', borderRadius: '12px', borderTopRightRadius: '3px', fontSize: '.72rem', background: '#D9FDD3', alignSelf: 'flex-end', boxShadow: '0 1px 1px rgba(0,0,0,.08)'}}>¡Listo! Turno confirmado ✅ Te esperamos.<span style={{display: 'block', fontSize: '.58rem', color: '#8696A0', textAlign: 'right', marginTop: '3px'}}>09:14 ✓✓</span></div>
+      <div style={{maxWidth: '82%', padding: '8px 11px', borderRadius: '12px', borderTopLeftRadius: '3px', fontSize: '.72rem', background: '#fff', alignSelf: 'flex-start', boxShadow: '0 1px 1px rgba(0,0,0,.08)'}}>Gracias! Se puede pagar con transferencia?<span style={{display: 'block', fontSize: '.58rem', color: '#8696A0', textAlign: 'right', marginTop: '3px'}}>09:15</span></div>
+      <div style={{maxWidth: '82%', padding: '8px 11px', borderRadius: '12px', borderTopRightRadius: '3px', fontSize: '.72rem', background: '#D9FDD3', alignSelf: 'flex-end', boxShadow: '0 1px 1px rgba(0,0,0,.08)'}}>Sí. Te dejamos el alias al confirmar la seña 💳<span style={{display: 'block', fontSize: '.58rem', color: '#8696A0', textAlign: 'right', marginTop: '3px'}}>09:15 ✓✓</span></div>
+      </div>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* IA */}
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-4xl rounded-3xl bg-clovix-black p-10 sm:p-14">
-          <span className="rounded-full bg-clovix-violet/20 px-4 py-1.5 text-sm font-medium text-clovix-violet">
-            Exclusivo para cosmiátras
-          </span>
-          <h2 className="mt-6 text-3xl font-bold text-white sm:text-4xl">
-            Informes clínicos generados con inteligencia artificial
-          </h2>
-          <ul className="mt-8 space-y-4">
-            {iaFeatures.map((f) => (
-              <li key={f} className="flex items-start gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-clovix-violet" />
-                <span className="text-white/80">{f}</span>
-              </li>
-            ))}
-          </ul>
+      </div>
+      </section><section className="section" id="modulos" style={{background: 'var(--mist)'}}>
+      <div className="wrap">
+        <div className="section-head rv">
+          <span className="eyebrow">Módulos</span>
+          <h2 style={{marginTop: '16px'}}>Todo lo que hace falta, en un solo lugar</h2>
+          <p className="lead">Ocho módulos que comparten los mismos clientes, los mismos turnos y la misma historia.</p>
         </div>
-      </section>
-
-      {/* Planes */}
-      <section id="planes" className="bg-clovix-gray-light px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-bold text-clovix-black sm:text-4xl">
-            Planes
-          </h2>
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {planes.map((plan) => (
-              <div
-                key={plan.nombre}
-                className={`flex flex-col rounded-2xl bg-white p-8 ${
-                  plan.destacado
-                    ? "border-2 border-clovix-violet shadow-lg"
-                    : "border border-black/5 shadow-sm"
-                }`}
-              >
-                {plan.destacado && (
-                  <span className="mb-4 w-fit rounded-full bg-clovix-violet px-3 py-1 text-xs font-semibold text-white">
-                    Más elegido
-                  </span>
-                )}
-                <h3 className="text-xl font-bold text-clovix-black">
-                  {plan.nombre}
-                </h3>
-                <p className="mt-2 text-3xl font-bold text-clovix-black">
-                  {plan.precio}
-                  <span className="text-base font-normal text-clovix-gray-text">
-                    /mes
-                  </span>
-                </p>
-                <ul className="mt-6 space-y-2 text-sm text-clovix-gray-text">
-                  {plan.limites.map((l) => (
-                    <li key={l}>{l}</li>
-                  ))}
-                </ul>
-                <div className="mt-6 border-t border-black/5 pt-6">
-                  <p className="text-sm font-semibold text-clovix-black">Incluye</p>
-                  <ul className="mt-3 space-y-2">
-                    {plan.incluye.map((i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-clovix-black"
-                      >
-                        <span className="text-clovix-blue">✓</span>
-                        {i}
-                      </li>
-                    ))}
-                  </ul>
+        <div className="cards c4"><div className="card rv" style={{padding: '26px'}}><div className="ico" style={{width: '40px', height: '40px', borderRadius: '11px', marginBottom: '15px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3 style={{fontSize: '1.02rem'}}>Agenda y turnos</h3><p style={{fontSize: '.87rem'}}>Calendario por profesional, slots de 15 min, bloqueos y control total de tu agenda.</p></div><div className="card rv" style={{padding: '26px'}}><div className="ico" style={{width: '40px', height: '40px', borderRadius: '11px', marginBottom: '15px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.87"/></svg></div><h3 style={{fontSize: '1.02rem'}}>Gestión de clientes</h3><p style={{fontSize: '.87rem'}}>Base de clientes, historial completo, clasificación y seguimiento de inactividad.</p></div><div className="card rv" style={{padding: '26px'}}><div className="ico" style={{width: '40px', height: '40px', borderRadius: '11px', marginBottom: '15px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5z"/></svg></div><h3 style={{fontSize: '1.02rem'}}>WhatsApp automático</h3><p style={{fontSize: '.87rem'}}>Recordatorios pre-turno, mensajes post-servicio, encuestas y respuestas automáticas.</p></div><div className="card rv" style={{padding: '26px'}}><div className="ico" style={{width: '40px', height: '40px', borderRadius: '11px', marginBottom: '15px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5M9 13h6M9 17h4"/></svg></div><h3 style={{fontSize: '1.02rem'}}>Ficha cosmiátrica</h3><p style={{fontSize: '.87rem'}}>Historial clínico, sesiones, consentimientos, fotos comparativas e informes con IA.</p></div><div className="card rv" style={{padding: '26px'}}><div className="ico" style={{width: '40px', height: '40px', borderRadius: '11px', marginBottom: '15px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L20 7"/></svg></div><h3 style={{fontSize: '1.02rem'}}>Reportes y métricas</h3><p style={{fontSize: '.87rem'}}>Dashboard en tiempo real, satisfacción, calificación de profesionales y control de turnos.</p></div><div className="card rv" style={{padding: '26px'}}><div className="ico" style={{width: '40px', height: '40px', borderRadius: '11px', marginBottom: '15px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg></div><h3 style={{fontSize: '1.02rem'}}>Portal de reservas</h3><p style={{fontSize: '.87rem'}}>Tus clientes reservan solos, 24/7, desde cualquier dispositivo.</p></div><div className="card rv" style={{padding: '26px'}}><div className="ico" style={{width: '40px', height: '40px', borderRadius: '11px', marginBottom: '15px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg></div><h3 style={{fontSize: '1.02rem'}}>Cobranzas y caja</h3><p style={{fontSize: '.87rem'}}>Efectivo, transferencia y Mercado Pago. Señas, saldos y cierre de caja integrado.</p></div><div className="card rv" style={{padding: '26px'}}><div className="ico" style={{width: '40px', height: '40px', borderRadius: '11px', marginBottom: '15px'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></div><h3 style={{fontSize: '1.02rem'}}>Campañas push</h3><p style={{fontSize: '.87rem'}}>Mensajes masivos por WhatsApp para clientes activos o en riesgo de abandono.</p></div></div>
+      </div>
+      </section><section className="section" style={{paddingBottom: '0'}}>
+      <div className="wrap">
+        <div className="dark rv" style={{borderRadius: '30px', padding: 'clamp(38px,5vw,62px)'}}>
+          <svg className="nodes a" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stopColor="#3B6FE8"/><stop offset="1" stopColor="#7B5CF0"/></linearGradient></defs>
+      <line x1="60.00" y1="21.00" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="40.50" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="79.50" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="99.00" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="79.50" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="40.50" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="42.80" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="51.40" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="68.60" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="60.00" y1="77.20" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="68.60" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="51.40" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><circle cx="60.00" cy="21.00" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="40.50" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="60.00" cy="99.00" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="40.50" r="7.4" fill="url(#ng)"/>
+      <circle cx="60" cy="60" r="15" fill="none" stroke="url(#ng)" strokeWidth="5"/>
+      <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg>
+          <div className="hero-grid" style={{alignItems: 'center'}}>
+            <div>
+              <span className="badge-pill" style={{background: 'rgba(123,92,240,.2)', borderColor: 'rgba(123,92,240,.4)'}}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v4M12 17v4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M3 12h4M17 12h4M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg> Exclusivo para cosmiatras</span>
+              <h2 style={{marginTop: '22px', color: '#fff'}}>Informes clínicos generados con inteligencia artificial</h2>
+              <ul style={{listStyle: 'none', marginTop: '26px', display: 'flex', flexDirection: 'column', gap: '15px'}}><li style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}><span style={{width: '7px', height: '7px', borderRadius: '99px', background: '#B9A5FF', marginTop: '9px', flexShrink: '0'}}></span><span style={{color: 'rgba(255,255,255,.82)'}}>Comparativa de fotos entre sesiones para visualizar la evolución del tratamiento.</span></li><li style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}><span style={{width: '7px', height: '7px', borderRadius: '99px', background: '#B9A5FF', marginTop: '9px', flexShrink: '0'}}></span><span style={{color: 'rgba(255,255,255,.82)'}}>Informe avanzado para el profesional con análisis clínico de cada paciente.</span></li><li style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}><span style={{width: '7px', height: '7px', borderRadius: '99px', background: '#B9A5FF', marginTop: '9px', flexShrink: '0'}}></span><span style={{color: 'rgba(255,255,255,.82)'}}>Informe personalizado para el paciente comparando imágenes de distintas sesiones.</span></li><li style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}><span style={{width: '7px', height: '7px', borderRadius: '99px', background: '#B9A5FF', marginTop: '9px', flexShrink: '0'}}></span><span style={{color: 'rgba(255,255,255,.82)'}}>Historial clínico completo con consentimientos y control de sesiones integrado.</span></li></ul>
+            </div>
+            <div className="stage win-flat">
+              <div className="win">
+                <div className="win-bar"><i></i><i></i><i></i><span className="win-url">Ficha · Sesión 1 vs Sesión 6</span></div>
+                <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px', background: 'var(--line)'}}>
+                  <div style={{background: 'linear-gradient(145deg,#E8DFF5,#D6C7EC)', aspectRatio: '3/4', display: 'grid', placeItems: 'center', color: '#7B5CF0', fontSize: '.7rem', fontWeight: '600'}}>Sesión 1</div>
+                  <div style={{background: 'linear-gradient(145deg,#DDE9FB,#C3D8F7)', aspectRatio: '3/4', display: 'grid', placeItems: 'center', color: '#3B6FE8', fontSize: '.7rem', fontWeight: '600'}}>Sesión 6</div>
                 </div>
-                {plan.noIncluye.length > 0 && (
-                  <div className="mt-4">
-                    <ul className="space-y-2">
-                      {plan.noIncluye.map((i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-sm text-clovix-gray-text"
-                        >
-                          <span>✕</span>
-                          {i}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                <div className="mt-8 flex flex-col gap-3">
-                  <a
-                    href={SIGNUP_URL}
-                    className={`rounded-full px-6 py-3 text-center text-sm font-semibold transition-colors ${
-                      plan.destacado
-                        ? "bg-clovix-violet text-white hover:bg-violet-700"
-                        : "bg-clovix-black text-white hover:bg-black/80"
-                    }`}
-                  >
-                    Empezar gratis
-                  </a>
-                  <a
-                    href={LOGIN_URL}
-                    className="rounded-full border border-clovix-black/15 px-6 py-3 text-center text-sm font-semibold text-clovix-black transition-colors hover:bg-black/5"
-                  >
-                    Ya soy usuario
-                  </a>
+                <div style={{padding: '16px 18px', background: '#fff'}}>
+                  <div style={{fontSize: '.72rem', color: 'var(--muted)', fontWeight: '600', letterSpacing: '.08em', textTransform: 'uppercase'}}>Informe IA</div>
+                  <p style={{fontSize: '.8rem', color: 'var(--muted)', marginTop: '8px', lineHeight: '1.5'}}>Mejora visible en textura y uniformidad del tono. Se sugiere continuar el esquema y espaciar las sesiones a 21 días.</p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-          <p className="mt-10 text-center text-sm text-clovix-gray-text">
-            Todos los planes incluyen 15 días gratis, sin tarjeta.
-          </p>
         </div>
-      </section>
-
-      {/* CTA final */}
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-3xl rounded-3xl bg-clovix-blue px-6 py-16 text-center sm:px-14">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
-            Tu negocio merece más que una agenda digital
-          </h2>
-          <p className="mt-4 text-lg text-white/85">
-            Nexo es el sistema que trabaja mientras vos atendés. Probalo 15 días sin
-            costo.
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href={SIGNUP_URL}
-              className="rounded-full bg-white px-8 py-3.5 text-base font-semibold text-clovix-blue transition-colors hover:bg-white/90"
-            >
-              Empezar gratis
-            </a>
-            <a
-              href={LOGIN_URL}
-              className="rounded-full border border-white/40 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              Ya soy usuario
-            </a>
+      </div>
+      </section><section className="section" id="planes">
+      <div className="wrap">
+        <div className="section-head rv">
+          <span className="eyebrow">Planes</span>
+          <h2 style={{marginTop: '16px'}}>Precios claros, sin letra chica</h2>
+          <p className="lead">Todos los planes incluyen 15 días gratis, sin tarjeta. Cambiás de plan cuando tu negocio lo pida.</p>
+        </div>
+        <div className="plans"><div className="plan  rv">
+        <h3>Inicial</h3>
+        <div className="price">$80.000<small>/mes</small></div>
+        <div className="plan-cap">Para empezar a ordenar la agenda</div>
+        <div className="plan-lim"><span className="chip">2 profesionales</span><span className="chip">400 turnos/mes</span><span className="chip">600 WhatsApp/mes</span><span className="chip">10 informes IA</span></div>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Dashboard</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Turnos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Clientes</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Fichas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>WhatsApp automático</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>CRM</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Campañas push</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Portal de reservas</li></ul>
+        <a href="https://nexo.clovix.app/sign_up" className="btn btn-ink">Empezar gratis</a>
+      </div><div className="plan top rv"><span className="plan-flag">Más elegido</span>
+        <h3>Profesional</h3>
+        <div className="price">$120.000<small>/mes</small></div>
+        <div className="plan-cap">El que elige la mayoría de los centros</div>
+        <div className="plan-lim"><span className="chip">5 profesionales</span><span className="chip">1200 turnos/mes</span><span className="chip">3000 WhatsApp/mes</span><span className="chip">200 push/mes</span><span className="chip">50 informes IA</span></div>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Todo lo de Inicial</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>CRM</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Cobros</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Encuestas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Campañas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Calificación</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Portal de reservas</li></ul>
+        <a href="https://nexo.clovix.app/sign_up" className="btn btn-grad">Empezar gratis</a>
+      </div><div className="plan  rv">
+        <h3>Premium</h3>
+        <div className="price">$150.000<small>/mes</small></div>
+        <div className="plan-cap">Para centros con varias sucursales</div>
+        <div className="plan-lim"><span className="chip">10 profesionales</span><span className="chip">2500 turnos/mes</span><span className="chip">7000 WhatsApp/mes</span><span className="chip">500 push/mes</span><span className="chip">50 informes IA</span></div>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Todo completo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Portal de reservas público</li></ul>
+        <a href="https://nexo.clovix.app/sign_up" className="btn btn-ink">Empezar gratis</a>
+      </div></div>
+        <p className="center lead" style={{marginTop: '36px', fontSize: '.9rem'}}>¿Más de 10 profesionales o varias sucursales? <Link href="/#contacto" style={{color: 'var(--blue)', fontWeight: '600'}}>Hablemos de un plan a medida</Link></p>
+      </div>
+      </section><section className="section" id="faq" style={{background: 'var(--mist)'}}>
+      <div className="wrap">
+        <div className="section-head rv">
+          <span className="eyebrow">Preguntas</span>
+          <h2 style={{marginTop: '16px'}}>Lo que todos preguntan antes de empezar</h2>
+        </div>
+        <div className="cards c2"><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Tengo que instalar algo?</h3><p style={{fontSize: '.88rem'}}>No. Nexo funciona en el navegador, en la computadora del mostrador y en el celular de cada profesional. Se entra con usuario y contraseña.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Los mensajes salen de mi número de WhatsApp?</h3><p style={{fontSize: '.88rem'}}>Sí. Se conecta tu propia línea, así el cliente recibe el mensaje de tu centro y te puede responder ahí mismo.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Qué pasa con los datos de mis clientes?</h3><p style={{fontSize: '.88rem'}}>Son tuyos. Cada centro tiene su información aislada del resto y podés exportarla cuando quieras.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Y si tengo más de una sucursal?</h3><p style={{fontSize: '.88rem'}}>El plan Premium contempla sucursales, con agenda y profesionales separados pero una sola base de clientes.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Me puedo dar de baja?</h3><p style={{fontSize: '.88rem'}}>Cuando quieras, sin permanencia. Los primeros 15 días son gratis y no pedimos tarjeta para empezar.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Sirve si no soy un centro de estética?</h3><p style={{fontSize: '.88rem'}}>Sí. Está pensado para cualquier negocio que trabaje con turnos y profesionales; las fichas clínicas son opcionales.</p></div></div>
+      </div>
+      </section><section className="section">
+      <div className="wrap">
+        <div className="cta-box rv">
+          <svg className="nodes a" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stopColor="#3B6FE8"/><stop offset="1" stopColor="#7B5CF0"/></linearGradient></defs>
+      <line x1="60.00" y1="21.00" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="40.50" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="79.50" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="99.00" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="79.50" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="40.50" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="42.80" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="51.40" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="68.60" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="60.00" y1="77.20" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="68.60" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="51.40" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><circle cx="60.00" cy="21.00" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="40.50" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="60.00" cy="99.00" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="40.50" r="7.4" fill="url(#ng)"/>
+      <circle cx="60" cy="60" r="15" fill="none" stroke="url(#ng)" strokeWidth="5"/>
+      <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg>
+          <h2>Tu negocio merece más que una agenda digital</h2>
+          <p>Nexo es el sistema que trabaja mientras vos atendés. Probalo 15 días sin costo.</p>
+          <div className="btns">
+            <a href="https://nexo.clovix.app/sign_up" className="btn btn-white">Empezar gratis</a>
+            <a href="https://nexo.clovix.app/login" className="btn btn-ghost">Ya soy usuario</a>
           </div>
-          <p className="mt-4 text-sm text-white/70">
-            Sin tarjeta de crédito · 15 días gratis · Cancelás cuando querés
-          </p>
+          <p style={{fontSize: '.83rem', color: 'rgba(255,255,255,.72)', marginTop: '22px'}}>Sin tarjeta de crédito · 15 días gratis · Cancelás cuando querés</p>
         </div>
+      </div>
       </section>
-
       <Footer />
-    </div>
-  );
+    </>
+  )
 }

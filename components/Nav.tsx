@@ -1,50 +1,42 @@
-import Image from "next/image";
 import Link from "next/link";
 
+type Item = { label: string; href: string };
+
 export function Nav({
-  breadcrumb,
-  ctaHref,
-  ctaLabel = "Empezar gratis",
+  items,
+  crumb,
+  cta,
+  extra,
 }: {
-  breadcrumb?: string;
-  ctaHref: string;
-  ctaLabel?: string;
+  items: Item[];
+  crumb?: string;
+  cta: { href: string; label: string };
+  extra?: { href: string; label: string };
 }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/clovix_logo_solo.svg"
-            alt="Clovix"
-            width={160}
-            height={48}
-            priority
-          />
-          {breadcrumb && (
-            <span className="hidden text-sm font-medium text-clovix-gray-text sm:inline">
-              {breadcrumb}
-            </span>
-          )}
+    <header className="nav">
+      <div className="nav-in">
+        <Link href="/" className="nav-brand" aria-label="Clovix">
+          <span className="mark l-clovix-d only-dark" role="img" aria-label="Clovix" />
+          <span className="mark l-clovix only-solid" aria-hidden="true" />
+          {crumb && <span className="crumb">{crumb}</span>}
         </Link>
-        <div className="hidden items-center gap-8 text-sm font-medium text-clovix-black md:flex">
-          <a href="/#soluciones" className="hover:text-clovix-blue">
-            Soluciones
-          </a>
-          <a href="/#por-que-clovix" className="hover:text-clovix-blue">
-            Por qué Clovix
-          </a>
-          <a href="/#contacto" className="hover:text-clovix-blue">
-            Contacto
-          </a>
+        <nav className="nav-links">
+          {items.map((i) =>
+            i.href.startsWith("#") || i.href.startsWith("http") ? (
+              <a key={i.href} href={i.href}>{i.label}</a>
+            ) : (
+              <Link key={i.href} href={i.href}>{i.label}</Link>
+            ),
+          )}
+        </nav>
+        <div className="nav-cta">
+          {extra && (
+            <a href={extra.href} className="btn btn-ghost btn-sm">{extra.label}</a>
+          )}
+          <a href={cta.href} className="btn btn-grad btn-sm">{cta.label}</a>
         </div>
-        <a
-          href={ctaHref}
-          className="rounded-full bg-clovix-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
-        >
-          {ctaLabel}
-        </a>
-      </nav>
+      </div>
     </header>
   );
 }
