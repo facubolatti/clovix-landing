@@ -37,6 +37,15 @@ export default function RootLayout({
   return (
     <html lang="es" className={poppins.variable}>
       <body>
+        {/* Enciende el modo animado antes de pintar. Si a los 2,5 s el cliente
+            no dio senial de vida, lo apaga y el contenido se ve igual. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var d=document.documentElement;d.classList.add('reveal');" +
+              "setTimeout(function(){if(!window.__clovixReveal)d.classList.remove('reveal')},2500)})()",
+          }}
+        />
         {children}
         <SiteEffects />
       </body>

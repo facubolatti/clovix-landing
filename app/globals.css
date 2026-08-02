@@ -412,6 +412,8 @@ section[id]{scroll-margin-top:76px}
 .foot-bot{margin-top:54px;padding-top:26px;border-top:1px solid rgba(255,255,255,.09);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.82rem}
 
 /* ── revelado ───────────────────────────────────────────── */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.float,.nodes{animation:none}}
+/* El contenido se ve siempre. Solo se oculta para animarlo cuando el script de
+   revelado confirmo que esta vivo: si el JS falla, la pagina se ve igual. */
+html.reveal .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+html.reveal .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html.reveal .rv{opacity:1;transform:none;transition:none}.float,.nodes{animation:none}}
