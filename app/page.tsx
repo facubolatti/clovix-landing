@@ -6,11 +6,11 @@ import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Clovix — Proveedor de soluciones de inteligencia artificial",
-  description: "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: productos SaaS propios y consultoría en IA.",
+  description: "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: una plataforma propia de productos SaaS con inteligencia artificial adentro.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Clovix — Proveedor de soluciones de inteligencia artificial",
-    description: "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: productos SaaS propios y consultoría en IA.",
+    description: "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: una plataforma propia de productos SaaS con inteligencia artificial adentro.",
     url: "/",
     siteName: "Clovix",
     locale: "es_AR",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Nav items={[{ label: "Qué hacemos", href: "#capacidades" }, { label: "Portfolio", href: "/soluciones" }, { label: "El enfoque", href: "#enfoque" }, { label: "Contacto", href: "#contacto" }]} cta={{ href: "#contacto", label: "Hablar con nosotros" }} />
+      <Nav items={[{ label: "Qué hacemos", href: "#capacidades" }, { label: "Productos", href: "/soluciones" }, { label: "El enfoque", href: "#enfoque" }, { label: "Contacto", href: "#contacto" }]} cta={{ href: "#contacto", label: "Hablar con nosotros" }} />
       <section className="dark hero">
       <svg className="nodes a" viewBox="0 0 120 120" fill="none" aria-hidden="true">
       <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
@@ -41,7 +41,7 @@ export default function Page() {
           <h1>Software que gestiona.<br /><span className="grad-text">Inteligencia que fideliza.</span><br />Vínculos que duran.</h1>
           <p className="lead">Construimos y operamos sistemas propios que miran lo que pasa en tu negocio todos los días y proponen qué hacer con eso. Inteligencia artificial adentro del trabajo, no al costado.</p>
           <div className="hero-cta">
-            <Link href="/soluciones" className="btn btn-grad">Ver el portfolio</Link>
+            <Link href="/soluciones" className="btn btn-grad">Ver los productos</Link>
             <a href="#contacto" className="btn btn-ghost">Hablar con nosotros</a>
           </div>
           <div className="hero-note">
@@ -83,8 +83,8 @@ export default function Page() {
             <p>Modelos que leen fotos de tratamientos, detectan a quién se está por perder el negocio y redactan el mensaje justo. IA que hace trabajo, no que decora la pantalla.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="8" width="18" height="12" rx="3"/><path d="M12 8V4M8 2h8"/><circle cx="8.5" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="15.5" cy="14" r="1.2" fill="currentColor" stroke="none"/></svg></div><h3>Automatizaciones a medida</h3>
             <p>Recordatorios, encuestas, cupones y alertas que salen solos, con reglas que cada negocio define. Si tu operación tiene una vuelta propia, se programa.</p></div>
-          <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L20 7"/></svg></div><h3>Análisis y diagnóstico</h3>
-            <p>Miramos los datos que tu negocio ya genera y explicamos qué está pasando: qué servicio sostiene la caja, qué cliente se está yendo y por qué.</p></div>
+          <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L20 7"/></svg></div><h3>Métricas y alertas</h3>
+            <p>Tableros en tiempo real, reportes por período y un aviso cuando un cliente baja su frecuencia. El análisis vive adentro del sistema, no en una planilla aparte.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg></div><h3>Integraciones reales</h3>
             <p>WhatsApp con tu propia línea, Mercado Pago, portales de reserva públicos y lo que el negocio ya venía usando. Nos adaptamos nosotros, no vos.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Seguridad por diseño</h3>
@@ -126,28 +126,29 @@ export default function Page() {
       </section><section className="section" id="portfolio" style={{background: 'var(--mist)'}}>
       <div className="wrap">
         <div className="section-head rv">
-          <span className="eyebrow">Portfolio</span>
-          <h2 style={{marginTop: '16px'}}>Dos formas de trabajar con nosotros</h2>
-          <p className="lead">Una es un producto que contratás y empezás a usar mañana. La otra es sentarnos con tus datos a entender qué está pasando.</p>
+          <span className="eyebrow">Productos</span>
+          <h2 style={{marginTop: '16px'}}>Un ecosistema, no un programa más</h2>
+          <p className="lead">Tres frentes del mismo negocio sobre la misma base de datos. Nexo está funcionando hoy; los otros dos se suman cuando los necesites, sin migrar nada.</p>
         </div>
-        <div className="cards c2">
-          <Link href="/soluciones#saas" className="card rv" style={{padding: '38px 34px'}}>
-            <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div>
-            <span className="eyebrow" style={{fontSize: '.68rem'}}>SaaS Products</span>
-            <h3 style={{fontSize: '1.5rem', marginTop: '10px'}}>Productos SaaS</h3>
-            <p style={{fontSize: '.95rem'}}>Sistemas propios, con suscripción mensual y precio de lista. Nexo está funcionando hoy; Contable y Analytics están en camino sobre la misma base de datos.</p>
-            <div className="prod-list" style={{marginTop: '20px'}}><span className="chip">Nexo · disponible</span><span className="chip">Contable · en desarrollo</span><span className="chip">Analytics · próximo</span></div>
-            <span className="btn btn-ink btn-sm" style={{marginTop: '26px'}}>Ver los productos</span>
-          </Link>
-          <Link href="/soluciones#consulting" className="card rv" style={{padding: '38px 34px'}}>
-            <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5.5-5.5 2 2-5.5z"/></svg></div>
-            <span className="eyebrow" style={{fontSize: '.68rem'}}>AI Consulting</span>
-            <h3 style={{fontSize: '1.5rem', marginTop: '10px'}}>Consultoría en IA</h3>
-            <p style={{fontSize: '.95rem'}}>Servicios profesionales de análisis y diagnóstico: qué dicen los datos sobre la evolución del negocio y de su cartera de clientes, y qué se puede automatizar con IA.</p>
-            <div className="prod-list" style={{marginTop: '20px'}}><span className="chip">Diagnóstico</span><span className="chip">Retención</span><span className="chip">Automatización</span></div>
-            <span className="btn btn-line btn-sm" style={{marginTop: '26px'}}>Ver de qué se trata</span>
-          </Link>
-        </div>
+        <Link href="/soluciones" className="card rv" style={{padding: 'clamp(30px,4vw,44px)', display: 'block'}}>
+          <div className="cards c3" style={{gap: '20px', alignItems: 'center'}}>
+            <div style={{textAlign: 'center'}}>
+              <span className="mark l-nexo c" style={{width: '100%', maxWidth: '168px', height: '50px', margin: '0 auto'}} role="img" aria-label="Clovix Nexo"></span>
+              <span className="tag live" style={{marginTop: '14px', display: 'inline-flex'}}><i className="dot-ok"></i> Disponible</span>
+            </div>
+            <div style={{textAlign: 'center'}}>
+              <span className="mark l-contable c" style={{width: '100%', maxWidth: '168px', height: '50px', margin: '0 auto'}} role="img" aria-label="Clovix Contable"></span>
+              <span className="tag" style={{marginTop: '14px', display: 'inline-block'}}>En desarrollo</span>
+            </div>
+            <div style={{textAlign: 'center'}}>
+              <span className="mark l-analytics c" style={{width: '100%', maxWidth: '168px', height: '50px', margin: '0 auto'}} role="img" aria-label="Clovix Analytics"></span>
+              <span className="tag" style={{marginTop: '14px', display: 'inline-block'}}>Próximamente</span>
+            </div>
+          </div>
+          <p className="center" style={{marginTop: '30px'}}>
+            <span className="btn btn-ink btn-sm">Ver los productos</span>
+          </p>
+        </Link>
       </div>
       </section><section className="section" id="enfoque">
       <div className="wrap">
@@ -176,7 +177,7 @@ export default function Page() {
       <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg>
           <h2>Empezá a conectar tu negocio hoy</h2>
           <p className="slogan">El punto donde la tecnología y el arte de fidelizar clientes se convierten en vínculos que duran.</p>
-          <div className="btns"><Link href="/soluciones" className="btn btn-white">Ver el portfolio</Link><a href="#contacto" className="btn btn-ghost">Contactanos</a></div>
+          <div className="btns"><Link href="/soluciones" className="btn btn-white">Ver los productos</Link><a href="#contacto" className="btn btn-ghost">Contactanos</a></div>
         </div>
       </div>
       </section><section className="section" id="contacto" style={{background: 'var(--mist)'}}>

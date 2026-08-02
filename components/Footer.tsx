@@ -12,12 +12,11 @@ export function Footer() {
             <p>Software que gestiona. Inteligencia que fideliza. Vínculos que duran.</p>
           </div>
           <div>
-            <h4>Portfolio</h4>
+            <h4>Productos</h4>
             <ul>
               <li><Link href="/nexo">Clovix Nexo</Link></li>
               <li><Link href="/soluciones#saas">Clovix Contable</Link></li>
               <li><Link href="/soluciones#saas">Clovix Analytics</Link></li>
-              <li><Link href="/soluciones#consulting">Consultoría en IA</Link></li>
             </ul>
           </div>
           <div>

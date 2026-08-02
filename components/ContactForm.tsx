@@ -51,7 +51,6 @@ export function ContactForm() {
         <label htmlFor="interes">¿Qué te interesa?</label>
         <select id="interes" name="interes" defaultValue="nexo">
           <option value="nexo">Clovix Nexo — turnos y fidelización</option>
-          <option value="consultoria">Consultoría en IA</option>
           <option value="contable">Clovix Contable</option>
           <option value="analytics">Clovix Analytics</option>
           <option value="orientacion">Todavía no sé, quiero que me orienten</option>
