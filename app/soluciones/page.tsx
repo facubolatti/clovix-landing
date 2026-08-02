@@ -45,9 +45,9 @@ export default function Page() {
           </div>
         </div>
       </div>
-      </section><section className="section" id="saas" style={{paddingTop: 'clamp(34px,3.5vw,40px)'}}>
+      </section><section className="section" id="saas" style={{paddingTop: 'clamp(28px,3vw,34px)'}}>
       <div className="wrap">
-        <div className="section-head rv" style={{marginBottom: '30px'}}>
+        <div className="section-head rv" style={{marginBottom: '24px'}}>
           <span className="eyebrow">SaaS Products</span>
           <h2 style={{marginTop: '12px', fontSize: 'clamp(1.8rem,3vw,2.5rem)'}}>El ecosistema Clovix</h2>
           <p className="lead">Tres frentes del mismo negocio, sobre la misma base y la misma forma de trabajar.</p>

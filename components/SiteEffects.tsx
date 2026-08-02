@@ -47,8 +47,8 @@ export function SiteEffects() {
       io.observe(el);
     });
 
-    // Segunda red: si el salto al ancla terminó después del primer barrido,
-    // vuelve a revisar qué quedó en pantalla.
+    // Segunda red: si el salto al ancla termino despues del primer barrido,
+    // vuelve a revisar que quedo en pantalla.
     const t = window.setTimeout(mostrarLoVisible, 1200);
 
     return () => {

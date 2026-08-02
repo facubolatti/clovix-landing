@@ -91,7 +91,7 @@ export default function Page() {
             <p>Cada negocio ve solo sus datos, y el aislamiento está en la base, no en la pantalla. Auditamos el sistema contra sí mismo todas las noches.</p></div>
         </div>
       </div>
-      </section><section className="section" style={{paddingTop: '0'}}>
+      </section><section className="section" style={{paddingTop: '0', paddingBottom: '0'}}>
       <div className="wrap">
         <div className="dark rv" style={{borderRadius: '34px', padding: 'clamp(40px,6vw,72px)'}}>
           <svg className="nodes b" viewBox="0 0 120 120" fill="none" aria-hidden="true">
@@ -167,16 +167,6 @@ export default function Page() {
       </div>
       </section><section className="section" style={{paddingTop: '0'}}>
       <div className="wrap">
-        <div className="quote rv">
-          <span className="mark l-icon c" style={{width: '44px', height: '44px', margin: '0 auto 26px'}}></span>
-          <p>“Antes anotábamos los turnos en un cuaderno y llamábamos uno por uno.
-          Hoy el sistema avisa, confirma y me dice quién hace tres meses que no viene.”</p>
-          <footer>Nombre Apellido · Centro de estética · Ciudad</footer>
-          <span className="slot">Texto de ejemplo — reemplazar por el testimonio real de un cliente</span>
-        </div>
-      </div>
-      </section><section className="section" style={{paddingTop: '0'}}>
-      <div className="wrap">
         <div className="cta-box rv">
           <svg className="nodes a" viewBox="0 0 120 120" fill="none" aria-hidden="true">
       <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
@@ -197,7 +187,6 @@ export default function Page() {
             <h2 style={{marginTop: '16px'}}>Contanos qué necesitás</h2>
             <p className="lead" style={{marginTop: '16px'}}>Te mostramos el sistema funcionando con los datos de tu negocio, sin compromiso. Respondemos el mismo día hábil.</p>
             <div style={{marginTop: '26px'}}>
-              <div className="ch"><span className="ch-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.7A8.4 8.4 0 1 1 21 11.5z"/></svg></span><div><b>WhatsApp</b><span>La vía más rápida — respondemos en el día</span></div></div>
               <div className="ch"><span className="ch-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>hola@clovix.app</b><span>Para consultas comerciales y soporte</span></div></div>
               <div className="ch"><span className="ch-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><b>Demo en vivo</b><span>30 minutos por videollamada, cuando te quede cómodo</span></div></div>
             </div>
