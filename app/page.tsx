@@ -39,7 +39,7 @@ export default function Page() {
         <div className="hero-stack">
           <span className="badge-pill"><span className="mark l-icon c"></span><em>AI Solutions Provider</em><span className="sep">·</span>Proveedor de soluciones de IA</span>
           <h1>Software que gestiona.<br /><span className="grad-text">Inteligencia que fideliza.</span><br />Vínculos que duran.</h1>
-          <p className="lead">Construimos y operamos sistemas propios que miran lo que pasa en tu negocio todos los días y proponen qué hacer con eso. Inteligencia artificial adentro del trabajo, no al costado.</p>
+          <p className="lead">Construimos y operamos sistemas propios que miran lo que pasa en tu negocio todos los días y proponen qué hacer con eso. Inteligencia artificial aplicada a la evolución de tu negocio.</p>
           <div className="hero-cta">
             <Link href="/soluciones" className="btn btn-grad">Ver los productos</Link>
             <a href="#contacto" className="btn btn-ghost">Hablar con nosotros</a>

@@ -40,7 +40,7 @@ h3{font-size:1.16rem;font-weight:600;letter-spacing:-.01em}
 .dark .eyebrow{color:#8FB0FF}
 .center{text-align:center}
 .section{padding:clamp(62px,7.5vw,110px) 0}
-section[id]{scroll-margin-top:76px}
+section[id]{scroll-margin-top:82px}
 .section-head{max-width:680px;margin:0 auto 46px;text-align:center}
 .section-head .lead{margin-top:14px}
 
@@ -82,7 +82,7 @@ section[id]{scroll-margin-top:76px}
 .nav.solid .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line);backdrop-filter:none}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 24px;max-width:1180px;margin:0 auto}
 .nav-brand{display:flex;align-items:center;gap:12px}
-.nav-brand .mark{width:132px;height:40px}
+.nav-brand .mark{width:152px;height:46px}
 .crumb{font-size:.8rem;color:rgba(255,255,255,.5);padding-left:12px;border-left:1px solid rgba(255,255,255,.18);white-space:nowrap}
 .nav-links{display:flex;align-items:center;gap:32px;font-size:.9rem;font-weight:500}
 .nav-links a{color:rgba(255,255,255,.72);transition:.2s;position:relative}
@@ -94,7 +94,7 @@ section[id]{scroll-margin-top:76px}
 .nav.solid .nav-links a:hover{color:var(--ink)}
 .nav.solid .crumb{color:var(--muted);border-color:var(--line)}
 .nav-cta{display:flex;align-items:center;gap:10px}
-@media(max-width:1000px){.nav-links{display:none}.nav-brand .mark{width:112px;height:34px}}
+@media(max-width:1000px){.nav-links{display:none}.nav-brand .mark{width:124px;height:38px}}
 @media(max-width:560px){.crumb{display:none}.nav-cta .btn:first-child{display:none}}
 
 /* ── fondo oscuro ───────────────────────────────────────── */
@@ -145,6 +145,14 @@ section[id]{scroll-margin-top:76px}
   .badge-pill em{width:100%;font-size:.68rem}
 }
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero .lead{max-width:none}}
+
+/* Tira de rubros: a quien le sirve, debajo de los botones del hero. */
+.rubros{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:26px}
+.rubros span{
+  font-size:.75rem;padding:6px 13px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.7);
+}
 
 /* ── malla de nodos decorativa ──────────────────────────── */
 .nodes{position:absolute;pointer-events:none;opacity:.24}

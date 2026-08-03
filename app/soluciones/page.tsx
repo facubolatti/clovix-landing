@@ -38,10 +38,18 @@ export default function Page() {
         <div className="hero-stack">
           <span className="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg><em>SaaS Products</em><span className="sep">·</span>Productos Clovix</span>
           <h1>Un ecosistema que<br /><span className="grad-text">crece con tu negocio</span></h1>
-          <p className="lead">La operación, la administración y los números sobre una sola base de datos. Sumás la solución que necesitás sin cambiar de sistema ni volver a capacitar al equipo.</p>
+          <p className="lead">Pensado para centros de estética, salones de belleza y todo negocio que atiende con turnos: la operación, la administración y los números sobre una sola base de datos, sin cambiar de sistema ni volver a capacitar al equipo.</p>
           <div className="hero-cta">
             <a href="#saas" className="btn btn-grad">Ver el ecosistema</a>
             <Link href="/nexo" className="btn btn-ghost">Conocer Nexo</Link>
+          </div>
+          <div className="rubros">
+            <span>Centros de estética</span>
+            <span>Salones de belleza</span>
+            <span>Peluquerías</span>
+            <span>Cosmiatría</span>
+            <span>Consultorios</span>
+            <span>Cualquier negocio con turnos</span>
           </div>
         </div>
       </div>
