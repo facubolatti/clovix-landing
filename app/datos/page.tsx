@@ -1,0 +1,122 @@
+import type { Metadata } from "next";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
+
+const ITEMS = [
+  { label: "Qué hacemos", href: "/#capacidades" },
+  { label: "Productos", href: "/soluciones" },
+  { label: "El enfoque", href: "/#enfoque" },
+  { label: "Contacto", href: "/#contacto" },
+];
+
+export const metadata: Metadata = {
+  title: "Tratamiento de datos",
+  description: "Acuerdo de tratamiento de datos: el negocio es responsable de la base de sus clientes y Clovix es encargado del tratamiento.",
+  alternates: { canonical: "/datos" },
+  robots: { index: true, follow: true },
+};
+
+export default function Page() {
+  return (
+    <>
+      <Nav items={ITEMS} crumb="Clovix / Legal" cta={{ href: "/#contacto", label: "Hablar con nosotros" }} />
+      <main className="legal">
+        <h1>Tratamiento de datos</h1>
+        <p className="fecha">Última actualización: agosto de 2026</p>
+
+        <p>
+          Este acuerdo explica qué pasa con los datos de <strong>tus clientes</strong>
+          —los que cargás en el sistema— y complementa a los{' '}
+          <a href="/terminos">términos y condiciones</a> y a la{' '}
+          <a href="/privacidad">política de privacidad</a>.
+        </p>
+
+        <h2>Quién es quién</h2>
+        <p>
+          Vos, el negocio que contrata el servicio, sos el{' '}
+          <strong>responsable</strong> de esa base de datos: decidís qué datos
+          cargás, para qué los usás y a quién le mandás mensajes. Clovix es el{' '}
+          <strong>encargado del tratamiento</strong>: los procesa por tu cuenta y
+          orden, únicamente para prestarte el servicio.
+        </p>
+
+        <h2>Qué hacemos y qué no</h2>
+        <p>Con los datos de tus clientes, Clovix:</p>
+        <ul>
+          <li>Los almacena y los procesa para que el sistema funcione: agenda, fichas, cobros, mensajes y reportes.</li>
+          <li>Los usa para generar las sugerencias automáticas del propio sistema —recordatorios, encuestas, alertas de inactividad y propuestas de cupones— que siempre quedan a tu aprobación.</li>
+          <li><strong>No los usa para ningún fin propio</strong>, ni comercial ni estadístico fuera de tu cuenta.</li>
+          <li><strong>No los cede ni los vende</strong> a terceros.</li>
+          <li>No los cruza con los de otros negocios: cada cuenta está aislada.</li>
+        </ul>
+
+        <h2>Datos de salud en las fichas</h2>
+        <p>
+          Las fichas cosmiátricas pueden contener información sobre la salud de tus
+          clientes, incluidas fotografías de tratamientos. La Ley 25.326 considera
+          esa información <strong>dato sensible</strong> y la protege de manera
+          especial.
+        </p>
+        <p>
+          Como responsable, sos vos quien debe obtener el{' '}
+          <strong>consentimiento expreso</strong> de cada cliente antes de registrar
+          ese tipo de información y de tomarle fotografías, y quien debe informarle
+          para qué se usa. Clovix pone las herramientas para registrar ese
+          consentimiento, pero no reemplaza tu obligación de pedirlo.
+        </p>
+
+        <h2>Los mensajes</h2>
+        <p>
+          Los recordatorios, encuestas y campañas salen desde tu propia línea de
+          WhatsApp y hacia los contactos que vos cargaste. Sos vos quien debe
+          contar con el consentimiento de esas personas para contactarlas.
+        </p>
+
+        <h2>Dónde están alojados</h2>
+        <p>
+          En servidores de proveedores de infraestructura que pueden estar
+          radicados fuera de la Argentina. Esos proveedores actúan como
+          subencargados: acceden solo a lo necesario para prestar el servicio y
+          están alcanzados por obligaciones de confidencialidad.
+        </p>
+
+        <h2>Seguridad y confidencialidad</h2>
+        <p>
+          El acceso viaja cifrado, cada cuenta está separada de las demás a nivel
+          de base de datos, y solo el personal de Clovix que necesita hacerlo para
+          dar soporte puede acceder a la información, bajo deber de
+          confidencialidad. Si ocurriera un incidente que comprometa datos de tus
+          clientes, te lo informamos para que puedas cumplir con tus propias
+          obligaciones.
+        </p>
+
+        <h2>Qué pasa si te das de baja</h2>
+        <p>
+          Podés pedir una <strong>exportación completa</strong> de tu información
+          antes de irte. Después de la baja, y pasado un plazo prudencial para que
+          puedas recuperarla si cambiaste de idea, eliminamos los datos de tus
+          clientes de los sistemas activos.
+        </p>
+
+        <h2>Derechos de tus clientes</h2>
+        <p>
+          Si una clienta tuya te pide acceder a sus datos, corregirlos o
+          eliminarlos, el pedido te corresponde a vos como responsable. Si
+          necesitás ayuda técnica para responderlo, escribinos a{' '}
+          <a href="mailto:comercial@clovix.app">comercial@clovix.app</a> y te
+          asistimos.
+        </p>
+        <div className="nota">
+          <p style={{ marginBottom: 0 }}>
+            Este documento está redactado en lenguaje claro y a nombre de Clovix
+            (clovix.app). Cuando se declare la razón social titular del servicio,
+            corresponde completar aquí el nombre, el CUIT y el domicilio legal.
+            Ante cualquier duda escribinos a{' '}
+            <a href="mailto:comercial@clovix.app">comercial@clovix.app</a>.
+          </p>
+        </div>
+      </main>
+      <Footer />
+    </>
+  )
+}

@@ -31,15 +31,15 @@ export function Footer() {
           <div>
             <h4>Legal</h4>
             <ul>
-              <li><a href="#">Términos y condiciones</a></li>
-              <li><a href="#">Política de privacidad</a></li>
-              <li><a href="#">Tratamiento de datos</a></li>
+              <li><Link href="/terminos">Términos y condiciones</Link></li>
+              <li><Link href="/privacidad">Política de privacidad</Link></li>
+              <li><Link href="/datos">Tratamiento de datos</Link></li>
             </ul>
           </div>
         </div>
         <div className="foot-bot">
           <span>© {new Date().getFullYear()} Clovix · Todos los derechos reservados</span>
-          <span>hola@clovix.app · Argentina</span>
+          <span>comercial@clovix.app · Argentina</span>
         </div>
       </div>
     </footer>

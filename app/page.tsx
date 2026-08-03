@@ -185,7 +185,7 @@ export default function Page() {
             <h2 style={{marginTop: '16px'}}>Contanos qué necesitás</h2>
             <p className="lead" style={{marginTop: '16px'}}>Te mostramos el sistema funcionando con los datos de tu negocio, sin compromiso. Respondemos el mismo día hábil.</p>
             <div style={{marginTop: '26px'}}>
-              <div className="ch"><span className="ch-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>hola@clovix.app</b><span>Para consultas comerciales y soporte</span></div></div>
+              <div className="ch"><span className="ch-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>comercial@clovix.app</b><span>Para consultas comerciales y soporte</span></div></div>
               <div className="ch"><span className="ch-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><b>Demo en vivo</b><span>30 minutos por videollamada, cuando te quede cómodo</span></div></div>
             </div>
           </div>
