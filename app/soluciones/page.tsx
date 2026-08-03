@@ -49,7 +49,7 @@ export default function Page() {
             <span>Peluquerías</span>
             <span>Cosmiatría</span>
             <span>Consultorios</span>
-            <span>Cualquier negocio con turnos</span>
+            <span>Cualquier negocio de prestación de servicios que utilice turnos</span>
           </div>
         </div>
       </div>

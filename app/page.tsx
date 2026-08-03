@@ -73,14 +73,14 @@ export default function Page() {
       <div className="wrap">
         <div className="section-head rv">
           <span className="eyebrow">Qué hacemos</span>
-          <h2 style={{marginTop: '16px'}}>Construimos el software que tu negocio no consigue hecho</h2>
-          <p className="lead">Clovix no revende sistemas. Diseñamos, programamos y sostenemos plataformas propias, con inteligencia artificial adentro y no como accesorio.</p>
+          <h2 style={{marginTop: '16px'}}>No revendemos sistemas. Los construimos.</h2>
+          <p className="lead">Construimos herramientas de software que ayudan a organizar el día a día de tu negocio, a optimizar tus tiempos y a mejorar la eficiencia de los resultados.</p>
         </div>
         <div className="cards c3">
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div><h3>Plataforma propia</h3>
             <p>Cada producto está construido por nosotros sobre la misma base. Por eso el turno, la ficha, el cobro y el mensaje son el mismo dato y no tres sistemas que se hablan mal.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v4M12 17v4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M3 12h4M17 12h4M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg></div><h3>Inteligencia artificial aplicada</h3>
-            <p>Modelos que leen fotos de tratamientos, detectan a quién se está por perder el negocio y redactan el mensaje justo. IA que hace trabajo, no que decora la pantalla.</p></div>
+            <p>Modelos que leen fotos de tratamientos, detectan a quién se está por perder el negocio y redactan el mensaje justo. La IA analiza y sugiere las acciones, vos simplemente las aprobás.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="8" width="18" height="12" rx="3"/><path d="M12 8V4M8 2h8"/><circle cx="8.5" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="15.5" cy="14" r="1.2" fill="currentColor" stroke="none"/></svg></div><h3>Automatizaciones a medida</h3>
             <p>Recordatorios, encuestas, cupones y alertas que salen solos, con reglas que cada negocio define. Si tu operación tiene una vuelta propia, se programa.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3.5-4 3 2.5L20 7"/></svg></div><h3>Métricas y alertas</h3>
