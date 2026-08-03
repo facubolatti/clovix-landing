@@ -21,15 +21,37 @@ export function SiteEffects() {
 
     const elementos = Array.from(document.querySelectorAll<HTMLElement>(".rv"));
 
-    // Lo que ya está en pantalla se muestra de entrada. Importa al entrar por
-    // un ancla (/soluciones#saas): ahí todo lo visible es una sección .rv.
-    const mostrarLoVisible = () => {
+    const enPantalla = (el: HTMLElement) => {
+      const r = el.getBoundingClientRect();
+      return r.top < window.innerHeight && r.bottom > 0;
+    };
+
+    /**
+     * Muestra lo que ya está a la vista.
+     *
+     * Con `ya` en true lo hace sin animación: es el caso del salto a un ancla.
+     * Ahí la sección de destino entra en pantalla todavía en opacity 0 y tarda
+     * casi un segundo en aparecer — hasta 210 ms de retraso más 700 ms de
+     * transición — y sobre fondo blanco eso se lee como una pantalla en blanco.
+     */
+    const mostrarLoVisible = (ya = false) => {
       elementos.forEach((el) => {
-        const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add("in");
+        if (!enPantalla(el)) return;
+        if (ya) {
+          // Sin transición: poner la clase no alcanza, porque la transición de
+          // opacidad queda encolada y el bloque sigue en 0 casi un segundo.
+          el.style.transition = "none";
+          el.classList.add("in");
+          requestAnimationFrame(() => {
+            el.style.transition = "";
+            el.style.transitionDelay = "0ms";
+          });
+        } else {
+          el.classList.add("in");
+        }
+        io.unobserve(el);
       });
     };
-    mostrarLoVisible();
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -46,13 +68,29 @@ export function SiteEffects() {
       el.style.transitionDelay = `${(i % 4) * 70}ms`;
       io.observe(el);
     });
+    mostrarLoVisible();
 
-    // Segunda red: si el salto al ancla termino despues del primer barrido,
-    // vuelve a revisar que quedo en pantalla.
-    const t = window.setTimeout(mostrarLoVisible, 1200);
+    // Cualquier salto a un ancla revela el destino en el acto. Se engancha al
+    // clic (mismo hash que el actual no dispara hashchange) y al hashchange.
+    const alSaltar = () => {
+      requestAnimationFrame(() => mostrarLoVisible(true));
+      window.setTimeout(() => mostrarLoVisible(true), 120);
+    };
+    const alClic = (e: MouseEvent) => {
+      const a = (e.target as HTMLElement | null)?.closest?.('a[href*="#"]');
+      if (a) alSaltar();
+    };
+    document.addEventListener("click", alClic);
+    window.addEventListener("hashchange", alSaltar);
+
+    // Red de seguridad para el primer dibujo, por si el salto inicial del
+    // navegador termina después del primer barrido.
+    const t = window.setTimeout(() => mostrarLoVisible(true), 1000);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("click", alClic);
+      window.removeEventListener("hashchange", alSaltar);
       window.clearTimeout(t);
       io.disconnect();
     };
