@@ -423,6 +423,10 @@ section[id]{scroll-margin-top:76px}
 .foot-bot{margin-top:54px;padding-top:26px;border-top:1px solid rgba(255,255,255,.09);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.82rem}
 
 /* ── revelado ───────────────────────────────────────────── */
-html.reveal .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
-html.reveal .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html.reveal .rv{opacity:1;transform:none;transition:none}.float,.nodes{animation:none}}
+/* El contenido NUNCA se oculta. Antes las secciones arrancaban en opacity 0 y
+   dependian de que un script las encendiera: si eso fallaba o llegaba tarde,
+   lo que se veia era una pagina en blanco. Ahora solo se anima el movimiento
+   de entrada, asi que el texto se lee siempre, con o sin JavaScript. */
+html.reveal .rv{transform:translateY(22px);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+html.reveal .rv.in{transform:none}
+@media(prefers-reduced-motion:reduce){html.reveal .rv{transform:none;transition:none}.float,.nodes{animation:none}}
