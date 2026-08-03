@@ -74,7 +74,7 @@ export default function Page() {
         <div className="section-head rv">
           <span className="eyebrow">Qué hacemos</span>
           <h2 style={{marginTop: '16px'}}>No revendemos sistemas. Los construimos.</h2>
-          <p className="lead">Construimos herramientas de software que ayudan a organizar el día a día de tu negocio, a optimizar tus tiempos y a mejorar la eficiencia de los resultados.</p>
+          <p className="lead">Desarrollamos herramientas de software que ayudan a organizar el día a día de tu negocio, a optimizar tus tiempos y a mejorar la eficiencia de los resultados.</p>
         </div>
         <div className="cards c3">
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div><h3>Plataforma propia</h3>
