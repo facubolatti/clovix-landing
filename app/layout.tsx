@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Clovix",
   },
   description:
-    "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: una plataforma propia de productos SaaS con inteligencia artificial adentro.",
+    "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: una plataforma propia de productos SaaS con inteligencia artificial dentro.",
   manifest: "/site.webmanifest",
   openGraph: {
     siteName: "Clovix",

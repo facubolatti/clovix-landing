@@ -23,7 +23,7 @@ export function Footer() {
             <h4>Empresa</h4>
             <ul>
               <li><Link href="/#capacidades">Qué hacemos</Link></li>
-              <li><Link href="/#enfoque">El enfoque Clovix</Link></li>
+              <li><Link href="/#enfoque">Enfoque Clovix</Link></li>
               <li><Link href="/#contacto">Contacto</Link></li>
               <li><a href="https://nexo.clovix.app/login">Ingresar al sistema</a></li>
             </ul>

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Nav items={[{ label: "El ecosistema", href: "#saas" }, { label: "Clovix Nexo", href: "/nexo" }, { label: "Contacto", href: "/#contacto" }]} crumb="Clovix / Productos" cta={{ href: "/#contacto", label: "Hablar con nosotros" }} />
+      <Nav items={[{ label: "Ecosistema", href: "#saas" }, { label: "Clovix Nexo", href: "/nexo" }, { label: "Contacto", href: "/#contacto" }]} crumb="Clovix / Productos" cta={{ href: "/#contacto", label: "Hablá con nosotros" }} />
       <section className="dark hero" style={{paddingBottom: 'clamp(56px,7vw,80px)'}}>
       <svg className="nodes a" viewBox="0 0 120 120" fill="none" aria-hidden="true">
       <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
@@ -40,7 +40,7 @@ export default function Page() {
           <h1>Un ecosistema que<br /><span className="grad-text">crece con tu negocio</span></h1>
           <p className="lead">Pensado para centros de estética, salones de belleza y todo negocio que atiende con turnos: la operación, la administración y los números sobre una sola base de datos, sin cambiar de sistema ni volver a capacitar al equipo.</p>
           <div className="hero-cta">
-            <a href="#saas" className="btn btn-grad">Ver el ecosistema</a>
+            <a href="#saas" className="btn btn-grad">Ver ecosistema</a>
             <Link href="/nexo" className="btn btn-ghost">Conocer Nexo</Link>
           </div>
           <div className="rubros">
@@ -57,13 +57,13 @@ export default function Page() {
       <div className="wrap">
         <div className="section-head rv" style={{marginBottom: '24px'}}>
           <span className="eyebrow">SaaS Products</span>
-          <h2 style={{marginTop: '12px', fontSize: 'clamp(1.8rem,3vw,2.5rem)'}}>El ecosistema Clovix</h2>
+          <h2 style={{marginTop: '12px', fontSize: 'clamp(1.8rem,3vw,2.5rem)'}}>Ecosistema Clovix</h2>
           <p className="lead">Tres soluciones que comparten los mismos clientes, los mismos datos y la misma forma de trabajar.</p>
         </div>
         <div className="cards c3 tight">
           <div className="card prod rv">
             <span className="mark l-nexo" role="img" aria-label="Clovix Nexo"></span>
-            <p>Turnos, clientes, fichas, cobros y automatización por WhatsApp. La operación completa de un negocio de servicios, con IA adentro.</p>
+            <p>Turnos, clientes, fichas, cobros y automatización por WhatsApp. La operación completa de un negocio de servicios, con IA dentro.</p>
             <div className="prod-list"><span className="chip">Agenda</span><span className="chip">WhatsApp</span><span className="chip">Fichas</span><span className="chip">Cobros</span><span className="chip">IA</span></div>
             <div className="prod-foot">
               <Link href="/nexo" className="btn btn-ink btn-sm">Ver todo lo que hace</Link>
@@ -96,7 +96,7 @@ export default function Page() {
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div><h3>Se suman de a uno</h3>
             <p>Empezás por Nexo y el resto se activa cuando tu negocio lo pida. Sin cambiar de sistema, sin volver a capacitar al equipo y sin un proyecto de migración.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>La misma IA adentro</h3>
-            <p>Visión sobre imágenes, detección de patrones y generación de texto: la inteligencia es de la plataforma, no de un módulo, así que se aplica a todo lo que se sume.</p></div>
+            <p>Visión sobre imágenes, detección de patrones y generación de texto: la inteligencia es de la plataforma, no de un módulo, se aplica a todo lo que se sume.</p></div>
         </div>
       </div>
       </section><section className="section" style={{paddingTop: '0'}}>
@@ -110,7 +110,7 @@ export default function Page() {
       <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg>
           <h2>Empecemos por Nexo</h2>
           <p className="slogan">Es el que ordena la operación desde el primer día: turnos, clientes y WhatsApp trabajando solos mientras vos atendés.</p>
-          <div className="btns"><a href="https://nexo.clovix.app/sign_up" className="btn btn-white">Probar 15 días gratis</a><Link href="/#contacto" className="btn btn-ghost">Hablar con nosotros</Link></div>
+          <div className="btns"><a href="https://nexo.clovix.app/sign_up" className="btn btn-white">Probar 15 días gratis</a><Link href="/#contacto" className="btn btn-ghost">Hablá con nosotros</Link></div>
         </div>
       </div>
       </section>

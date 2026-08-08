@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Nav items={[{ label: "Qué hacemos", href: "#capacidades" }, { label: "Productos", href: "/soluciones" }, { label: "El enfoque", href: "#enfoque" }, { label: "Contacto", href: "#contacto" }]} cta={{ href: "#contacto", label: "Hablar con nosotros" }} />
+      <Nav items={[{ label: "Qué hacemos", href: "#capacidades" }, { label: "Productos", href: "/soluciones" }, { label: "Enfoque", href: "#enfoque" }, { label: "Contacto", href: "#contacto" }]} cta={{ href: "#contacto", label: "Hablá con nosotros" }} />
       <section className="dark hero">
       <svg className="nodes a" viewBox="0 0 120 120" fill="none" aria-hidden="true">
       <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
@@ -38,11 +38,11 @@ export default function Page() {
       <div className="wrap wrap-wide">
         <div className="hero-stack">
           <span className="badge-pill"><span className="mark l-icon c"></span><em>AI Solutions Provider</em><span className="sep">·</span>Proveedor de soluciones de IA</span>
-          <h1>Software que gestiona.<br /><span className="grad-text">Inteligencia que fideliza.</span><br />Vínculos que duran.</h1>
+          <h1>Software que gestiona.<br /><span className="grad-text">Inteligencia que fideliza.</span><br />Vínculos que perduran.</h1>
           <p className="lead">Construimos y operamos sistemas propios que miran lo que pasa en tu negocio todos los días y proponen qué hacer con eso. Inteligencia artificial aplicada a la evolución de tu negocio.</p>
           <div className="hero-cta">
-            <Link href="/soluciones" className="btn btn-grad">Ver los productos</Link>
-            <a href="#contacto" className="btn btn-ghost">Hablar con nosotros</a>
+            <Link href="/soluciones" className="btn btn-grad">Ver productos</Link>
+            <a href="#contacto" className="btn btn-ghost">Hablá con nosotros</a>
           </div>
           <div className="hero-note">
             <span><i className="dot-ok"></i> Nexo en producción</span>
@@ -51,7 +51,7 @@ export default function Page() {
           </div>
         </div>
         <div className="engine">
-        <div><span className="eng-lbl">Lo que ya pasa en el negocio</span><div className="eng-chip"><i></i>Turnos y agenda</div><div className="eng-chip"><i></i>Fichas y fotos de sesión</div><div className="eng-chip"><i></i>Encuestas y respuestas</div><div className="eng-chip"><i></i>Cobros y caja</div><div className="eng-chip"><i></i>Conversaciones de WhatsApp</div></div>
+        <div><span className="eng-lbl">lo que ya sucede en tu negocio</span><div className="eng-chip"><i></i>Turnos y agenda</div><div className="eng-chip"><i></i>Fichas y fotos de sesión</div><div className="eng-chip"><i></i>Encuestas y respuestas</div><div className="eng-chip"><i></i>Cobros y caja</div><div className="eng-chip"><i></i>Conversaciones de WhatsApp</div></div>
         <div className="eng-core">
           <div className="eng-ring"><span className="mark l-icon c"></span></div>
           <div className="eng-name"><b>Motor Clovix IA</b><span>VISIÓN · PATRONES · LENGUAJE</span></div>
@@ -78,7 +78,7 @@ export default function Page() {
         </div>
         <div className="cards c3">
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></div><h3>Plataforma propia</h3>
-            <p>Cada producto está construido por nosotros sobre la misma base. Por eso el turno, la ficha, el cobro y el mensaje son el mismo dato y no tres sistemas que se hablan mal.</p></div>
+            <p>Cada producto está construido por nosotros sobre la misma base. Por eso el turno, la ficha, el cobro y el mensaje son el mismo dato y se comunican entre sí.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v4M12 17v4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M3 12h4M17 12h4M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg></div><h3>Inteligencia artificial aplicada</h3>
             <p>Modelos que leen fotos de tratamientos, detectan a quién se está por perder el negocio y redactan el mensaje justo. La IA analiza y sugiere las acciones, vos simplemente las aprobás.</p></div>
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="8" width="18" height="12" rx="3"/><path d="M12 8V4M8 2h8"/><circle cx="8.5" cy="14" r="1.2" fill="currentColor" stroke="none"/><circle cx="15.5" cy="14" r="1.2" fill="currentColor" stroke="none"/></svg></div><h3>Automatizaciones a medida</h3>
@@ -143,16 +143,16 @@ export default function Page() {
             </div>
           </div>
           <p className="center" style={{marginTop: '30px'}}>
-            <span className="btn btn-ink btn-sm">Ver los productos</span>
+            <span className="btn btn-ink btn-sm">Ver productos</span>
           </p>
         </Link>
       </div>
       </section><section className="section" id="enfoque">
       <div className="wrap">
         <div className="section-head rv">
-          <span className="eyebrow">El enfoque Clovix</span>
-          <h2 style={{marginTop: '16px'}}>La tecnología atrás. Tu oficio adelante.</h2>
-          <p className="lead slogan">Donde la gestión inteligente y la experiencia del cliente se unen para crear vínculos que duran.</p>
+          <span className="eyebrow">Enfoque Clovix.</span>
+          <h2 style={{marginTop: '16px'}}>La tecnología detrás. Tu oficio adelante.</h2>
+          <p className="lead slogan">Donde la gestión inteligente y la experiencia del cliente se unen para crear vínculos que perduren.</p>
         </div>
         <div className="cards c3">
           <div className="card rv"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><h3>Todo conectado</h3>
@@ -172,9 +172,9 @@ export default function Page() {
       <line x1="60.00" y1="21.00" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="40.50" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="93.77" y1="79.50" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="99.00" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="79.50" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="26.23" y1="40.50" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="1.1" opacity=".45"/><line x1="60.00" y1="42.80" x2="60.00" y2="21.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="51.40" x2="93.77" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="74.90" y1="68.60" x2="93.77" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="60.00" y1="77.20" x2="60.00" y2="99.00" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="68.60" x2="26.23" y2="79.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><line x1="45.10" y1="51.40" x2="26.23" y2="40.50" stroke="url(#ng)" strokeWidth="2.6" strokeLinecap="round"/><circle cx="60.00" cy="21.00" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="40.50" r="7.4" fill="url(#ng)"/><circle cx="93.77" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="60.00" cy="99.00" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="79.50" r="7.4" fill="url(#ng)"/><circle cx="26.23" cy="40.50" r="7.4" fill="url(#ng)"/>
       <circle cx="60" cy="60" r="15" fill="none" stroke="url(#ng)" strokeWidth="5"/>
       <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg>
-          <h2>Empezá a conectar tu negocio hoy</h2>
-          <p className="slogan">El punto donde la tecnología y el arte de fidelizar clientes se convierten en vínculos que duran.</p>
-          <div className="btns"><Link href="/soluciones" className="btn btn-white">Ver los productos</Link><a href="#contacto" className="btn btn-ghost">Contactanos</a></div>
+          <h2>Empezá a conectar con tu negocio hoy.</h2>
+          <p className="slogan">El punto donde la tecnología y el arte de fidelizar se convierten en vínculos que perduran.</p>
+          <div className="btns"><Link href="/soluciones" className="btn btn-white">Ver productos</Link><a href="#contacto" className="btn btn-ghost">Contactanos</a></div>
         </div>
       </div>
       </section><section className="section" id="contacto" style={{background: 'var(--mist)'}}>
