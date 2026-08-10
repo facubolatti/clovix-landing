@@ -25,7 +25,15 @@
 
 import nodemailer from 'nodemailer'
 
-const SUPABASE_URL = process.env.SUPABASE_URL ?? ''
+/**
+ * La barra final se saca acá y no se confía en cómo esté cargada la variable.
+ *
+ * El 10/08, en la primera prueba, la URL venía con barra al final: la dirección
+ * terminaba en `//leads` y PostgREST respondía 404 con `PGRST125 · Invalid path
+ * specified in request URL`. Un error que no se ve mirando la variable, porque
+ * a simple vista está bien escrita.
+ */
+const SUPABASE_URL = (process.env.SUPABASE_URL ?? '').replace(/\/+$/, '')
 const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY ?? ''
 const IP_SALT      = process.env.LEADS_IP_SALT ?? ''
 
