@@ -38,6 +38,18 @@ export default function RootLayout({
   return (
     <html lang="es" className={poppins.variable}>
       <body>
+        {/* Los dos logos del nav se piden antes de que el navegador llegue al
+            CSS que los referencia. Son fondos de `.l-clovix` y `.l-clovix-d`,
+            asi que el navegador recien se entera de que existen despues de
+            bajar y parsear la hoja de estilos: hasta ese momento la marca del
+            encabezado es un hueco. Es lo primero que ve alguien que entra.
+
+            Van los dos y no uno solo porque cual se muestra depende del tema
+            —claro u oscuro—, y eso se resuelve en el cliente. Pesan pocos KB
+            cada uno; adivinar mal cuesta mas que traer los dos. */}
+        <link rel="preload" as="image" type="image/svg+xml" href="/clovix-logo.svg" />
+        <link rel="preload" as="image" type="image/svg+xml" href="/clovix-logo-dark.svg" />
+
         {/* Enciende el modo animado antes de pintar. Si a los 2,5 s el cliente
             no dio senial de vida, lo apaga y el contenido se ve igual. */}
         <script
