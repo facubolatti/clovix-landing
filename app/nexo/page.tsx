@@ -220,18 +220,21 @@ export default function Page() {
         <h3>Inicial</h3>
         <div className="price">$85.000<small>/mes</small></div>
         <div className="plan-cap">El centro que dejó de ser una persona</div>
+        <div className="plan-destacado">Suma encuestas y campañas push</div>
         <div className="plan-lim"><span className="chip">3 profesionales</span><span className="chip">500 turnos/mes</span><span className="chip">2.000 WhatsApp/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div><div className="plan top rv"><span className="plan-flag">Más elegido</span>
         <h3>Profesional</h3>
         <div className="price">$120.000<small>/mes</small></div>
         <div className="plan-cap">El centro con equipo armado</div>
+        <div className="plan-destacado">El doble de cupos, para un equipo de seis</div>
         <div className="plan-lim"><span className="chip">6 profesionales</span><span className="chip">1.500 turnos/mes</span><span className="chip">4.000 WhatsApp/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-grad">Empezar gratis</a>
       </div><div className="plan  rv">
         <h3>Premium</h3>
         <div className="price">$160.000<small>/mes</small></div>
         <div className="plan-cap">El centro grande o con foco clínico</div>
+        <div className="plan-destacado">Dos sedes incluidas y turnos sin tope</div>
         <div className="plan-lim"><span className="chip">12 profesionales</span><span className="chip">turnos sin tope</span><span className="chip">8.000 WhatsApp/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div></div>
