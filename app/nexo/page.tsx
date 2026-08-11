@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { NEXO_SIGNUP, NEXO_LOGIN } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Clovix Nexo — Turnos, WhatsApp y fidelización",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <Nav items={[{ label: "Módulos", href: "#modulos" }, { label: "Planes", href: "#planes" }, { label: "Preguntas", href: "#faq" }, { label: "Portfolio", href: "/soluciones" }]} crumb="Clovix / Portfolio / Nexo" cta={{ href: "https://nexo.clovix.app/sign_up", label: "Empezar gratis" }} extra={{ href: "https://nexo.clovix.app/login", label: "Ingresar" }} />
+      <Nav items={[{ label: "Módulos", href: "#modulos" }, { label: "Planes", href: "#planes" }, { label: "Preguntas", href: "#faq" }, { label: "Portfolio", href: "/soluciones" }]} crumb="Clovix / Portfolio / Nexo" cta={{ href: NEXO_SIGNUP, label: "Empezar gratis" }} extra={{ href: NEXO_LOGIN, label: "Ingresar" }} />
       <section className="dark hero">
       <svg className="nodes a" viewBox="0 0 120 120" fill="none" aria-hidden="true">
       <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
@@ -40,8 +41,8 @@ export default function Page() {
           <h1>La plataforma que <span className="grad-text">conecta tu negocio</span> con tus clientes</h1>
           <p className="lead" style={{marginTop: '20px'}}>Turnos, WhatsApp, encuestas, fichas y métricas en un solo lugar. El sistema que trabaja mientras vos atendés.</p>
           <div className="hero-cta">
-            <a href="https://nexo.clovix.app/sign_up" className="btn btn-grad">Empezar gratis</a>
-            <a href="https://nexo.clovix.app/login" className="btn btn-ghost">Ya soy usuario</a>
+            <a href={NEXO_SIGNUP} className="btn btn-grad">Empezar gratis</a>
+            <a href={NEXO_LOGIN} className="btn btn-ghost">Ya soy usuario</a>
           </div>
           <div className="hero-note">
             <span><i className="dot-ok"></i> 15 días gratis</span>
@@ -198,21 +199,21 @@ export default function Page() {
         <div className="plan-cap">Para empezar a ordenar la agenda</div>
         <div className="plan-lim"><span className="chip">2 profesionales</span><span className="chip">400 turnos/mes</span><span className="chip">600 WhatsApp/mes</span><span className="chip">10 informes IA</span></div>
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Dashboard</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Turnos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Clientes</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Fichas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>WhatsApp automático</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>CRM</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Campañas push</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Portal de reservas</li></ul>
-        <a href="https://nexo.clovix.app/sign_up" className="btn btn-ink">Empezar gratis</a>
+        <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div><div className="plan top rv"><span className="plan-flag">Más elegido</span>
         <h3>Profesional</h3>
         <div className="price">$120.000<small>/mes</small></div>
         <div className="plan-cap">El que elige la mayoría de los centros</div>
         <div className="plan-lim"><span className="chip">5 profesionales</span><span className="chip">1200 turnos/mes</span><span className="chip">3000 WhatsApp/mes</span><span className="chip">200 push/mes</span><span className="chip">50 informes IA</span></div>
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Todo lo de Inicial</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>CRM</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Cobros</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Encuestas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Campañas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Calificación</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Portal de reservas</li></ul>
-        <a href="https://nexo.clovix.app/sign_up" className="btn btn-grad">Empezar gratis</a>
+        <a href={NEXO_SIGNUP} className="btn btn-grad">Empezar gratis</a>
       </div><div className="plan  rv">
         <h3>Premium</h3>
         <div className="price">$150.000<small>/mes</small></div>
         <div className="plan-cap">Para centros con varias sucursales</div>
         <div className="plan-lim"><span className="chip">10 profesionales</span><span className="chip">2500 turnos/mes</span><span className="chip">7000 WhatsApp/mes</span><span className="chip">500 push/mes</span><span className="chip">50 informes IA</span></div>
         <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Todo completo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Portal de reservas público</li></ul>
-        <a href="https://nexo.clovix.app/sign_up" className="btn btn-ink">Empezar gratis</a>
+        <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div></div>
         <p className="center lead" style={{marginTop: '36px', fontSize: '.9rem'}}>¿Más de 10 profesionales o varias sucursales? <Link href="/#contacto" style={{color: 'var(--blue)', fontWeight: '600'}}>Hablemos de un plan a medida</Link></p>
       </div>
@@ -236,8 +237,8 @@ export default function Page() {
           <h2>Tu negocio merece más que una agenda digital</h2>
           <p>Nexo es el sistema que trabaja mientras vos atendés. Probalo 15 días sin costo.</p>
           <div className="btns">
-            <a href="https://nexo.clovix.app/sign_up" className="btn btn-white">Empezar gratis</a>
-            <a href="https://nexo.clovix.app/login" className="btn btn-ghost">Ya soy usuario</a>
+            <a href={NEXO_SIGNUP} className="btn btn-white">Empezar gratis</a>
+            <a href={NEXO_LOGIN} className="btn btn-ghost">Ya soy usuario</a>
           </div>
           <p style={{fontSize: '.83rem', color: 'rgba(255,255,255,.72)', marginTop: '22px'}}>Sin tarjeta de crédito · 15 días gratis · Cancelás cuando querés</p>
         </div>

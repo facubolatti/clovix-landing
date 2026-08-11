@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { NEXO_SIGNUP } from "@/lib/urls";
 
 export const metadata: Metadata = {
   title: "Productos",
@@ -110,7 +111,7 @@ export default function Page() {
       <circle cx="60" cy="60" r="6" fill="url(#ng)"/></svg>
           <h2>Empecemos por Nexo</h2>
           <p className="slogan">Es el que ordena la operación desde el primer día: turnos, clientes y WhatsApp trabajando solos mientras vos atendés.</p>
-          <div className="btns"><a href="https://nexo.clovix.app/sign_up" className="btn btn-white">Probar 15 días gratis</a><Link href="/#contacto" className="btn btn-ghost">Hablá con nosotros</Link></div>
+          <div className="btns"><a href={NEXO_SIGNUP} className="btn btn-white">Probar 15 días gratis</a><Link href="/#contacto" className="btn btn-ghost">Hablá con nosotros</Link></div>
         </div>
       </div>
       </section>
