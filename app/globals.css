@@ -40,7 +40,7 @@ h3{font-size:1.16rem;font-weight:600;letter-spacing:-.01em}
 .dark .eyebrow{color:#8FB0FF}
 .center{text-align:center}
 .section{padding:clamp(62px,7.5vw,110px) 0}
-section[id]{scroll-margin-top:82px}
+section[id]{scroll-margin-top:76px}
 .section-head{max-width:680px;margin:0 auto 46px;text-align:center}
 .section-head .lead{margin-top:14px}
 
@@ -82,7 +82,7 @@ section[id]{scroll-margin-top:82px}
 .nav.solid .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line);backdrop-filter:none}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 24px;max-width:1180px;margin:0 auto}
 .nav-brand{display:flex;align-items:center;gap:12px}
-.nav-brand .mark{width:152px;height:46px}
+.nav-brand .mark{width:132px;height:40px}
 .crumb{font-size:.8rem;color:rgba(255,255,255,.5);padding-left:12px;border-left:1px solid rgba(255,255,255,.18);white-space:nowrap}
 .nav-links{display:flex;align-items:center;gap:32px;font-size:.9rem;font-weight:500}
 .nav-links a{color:rgba(255,255,255,.72);transition:.2s;position:relative}
@@ -94,7 +94,7 @@ section[id]{scroll-margin-top:82px}
 .nav.solid .nav-links a:hover{color:var(--ink)}
 .nav.solid .crumb{color:var(--muted);border-color:var(--line)}
 .nav-cta{display:flex;align-items:center;gap:10px}
-@media(max-width:1000px){.nav-links{display:none}.nav-brand .mark{width:124px;height:38px}}
+@media(max-width:1000px){.nav-links{display:none}.nav-brand .mark{width:112px;height:34px}}
 @media(max-width:560px){.crumb{display:none}.nav-cta .btn:first-child{display:none}}
 
 /* ── fondo oscuro ───────────────────────────────────────── */
@@ -145,14 +145,6 @@ section[id]{scroll-margin-top:82px}
   .badge-pill em{width:100%;font-size:.68rem}
 }
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero .lead{max-width:none}}
-
-/* Tira de rubros: a quien le sirve, debajo de los botones del hero. */
-.rubros{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:26px}
-.rubros span{
-  font-size:.75rem;padding:6px 13px;border-radius:999px;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-  color:rgba(255,255,255,.7);
-}
 
 /* ── malla de nodos decorativa ──────────────────────────── */
 .nodes{position:absolute;pointer-events:none;opacity:.24}
@@ -430,18 +422,6 @@ section[id]{scroll-margin-top:82px}
 .foot a:hover{color:#fff}
 .foot-bot{margin-top:54px;padding-top:26px;border-top:1px solid rgba(255,255,255,.09);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.82rem}
 
-/* ── páginas legales ─────────────────────────────────────── */
-.legal{max-width:760px;margin:0 auto;padding:clamp(38px,6vw,64px) 24px clamp(64px,8vw,96px)}
-.legal h1{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:10px}
-.legal .fecha{font-size:.85rem;color:var(--muted);margin-bottom:38px}
-.legal h2{font-size:1.18rem;font-weight:600;margin:38px 0 12px;letter-spacing:-.015em}
-.legal p{margin-bottom:14px;color:#33344a;line-height:1.75}
-.legal ul{margin:0 0 14px 20px;color:#33344a;line-height:1.75}
-.legal li{margin-bottom:7px}
-.legal a{color:var(--blue);font-weight:500}
-.legal strong{font-weight:600;color:var(--ink)}
-.legal .nota{background:var(--mist);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:40px;font-size:.9rem;color:var(--muted)}
-
 /* ── revelado ───────────────────────────────────────────── */
 /* El contenido NUNCA se oculta. Antes las secciones arrancaban en opacity 0 y
    dependian de que un script las encendiera: si eso fallaba o llegaba tarde,
@@ -450,3 +430,31 @@ section[id]{scroll-margin-top:82px}
 html.reveal .rv{transform:translateY(22px);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 html.reveal .rv.in{transform:none}
 @media(prefers-reduced-motion:reduce){html.reveal .rv{transform:none;transition:none}.float,.nodes{animation:none}}
+
+
+/* ── Planes: cuatro columnas, lo incluido y la tabla de diferencias ──────────
+   Agregado el 11/08/2026 al pasar de tres planes a cuatro. Va al final del
+   archivo a proposito: pisa las reglas de `.plans` de mas arriba, que estaban
+   pensadas para tres columnas. */
+.plans{grid-template-columns:repeat(4,1fr);gap:18px}
+.plan{padding:30px 22px}
+.price{font-size:2.1rem}
+@media(max-width:1180px){.plans{grid-template-columns:repeat(2,1fr);max-width:760px;margin:0 auto}}
+@media(max-width:640px){.plans{grid-template-columns:1fr;max-width:460px}}
+
+.incluye{background:var(--mist);border:1px solid var(--line);border-radius:22px;padding:28px 30px;margin-bottom:30px}
+.incluye h3{font-size:1rem;font-weight:600;margin-bottom:16px}
+.incluye-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 26px}
+.incluye-grid span{font-size:.885rem;line-height:1.45;color:var(--muted);position:relative;padding-left:22px}
+.incluye-grid span::before{content:"";position:absolute;left:0;top:.45em;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+@media(max-width:760px){.incluye-grid{grid-template-columns:1fr}}
+
+.tabla-wrap{margin-top:38px;overflow-x:auto}
+.cmp{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+.cmp th,.cmp td{padding:13px 10px;border-bottom:1px solid var(--line);text-align:center}
+.cmp thead th{font-weight:600;font-size:.82rem}
+.cmp th:first-child,.cmp td:first-child{text-align:left;color:var(--muted);font-size:.86rem}
+.cmp tbody tr:last-child td{border-bottom:none}
+
+.planes-pie{margin-top:30px;display:grid;gap:10px}
+.planes-pie p{font-size:.86rem;color:var(--muted);line-height:1.55;margin:0}

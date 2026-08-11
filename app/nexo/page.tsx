@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { NEXO_SIGNUP, NEXO_LOGIN } from "@/lib/urls";
@@ -190,32 +189,76 @@ export default function Page() {
       <div className="wrap">
         <div className="section-head rv">
           <span className="eyebrow">Planes</span>
-          <h2 style={{marginTop: '16px'}}>Precios claros, sin letra chica</h2>
-          <p className="lead">Todos los planes incluyen 15 días gratis, sin tarjeta. Cambiás de plan cuando tu negocio lo pida.</p>
+          <h2 style={{marginTop: '16px'}}>Todo Nexo, en los cuatro planes</h2>
+          <p className="lead">Lo que cambia es cuánto lo usás. Quince días gratis, sin tarjeta, y cambiás de plan cuando tu negocio lo pida.</p>
         </div>
+
+        <div className="incluye rv">
+          <h3>Lo que incluye cualquier plan</h3>
+          <div className="incluye-grid">
+            <span>Agenda y turnos, con bloqueos y varias profesionales</span>
+            <span>Clientes, con estados e historial</span>
+            <span>Ficha cosmiátrica, sesiones y consentimientos</span>
+            <span>Servicios y profesionales</span>
+            <span>Cobros con señas y cierre de caja por método</span>
+            <span>Reportes</span>
+            <span>Recordatorios automáticos por WhatsApp</span>
+            <span>Sugerencias de cupones con inteligencia artificial</span>
+            <span>La app del cliente con el nombre, el logo y el color de tu centro</span>
+            <span>Cero comisión: cobrás en tu propia cuenta de Mercado Pago</span>
+          </div>
+        </div>
+
         <div className="plans"><div className="plan  rv">
+        <h3>Independiente</h3>
+        <div className="price">$55.000<small>/mes</small></div>
+        <div className="plan-cap">Para la que atiende sola</div>
+        <div className="plan-lim"><span className="chip">1 profesional</span><span className="chip">250 turnos/mes</span><span className="chip">700 WhatsApp/mes</span></div>
+        <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
+      </div><div className="plan  rv">
         <h3>Inicial</h3>
-        <div className="price">$80.000<small>/mes</small></div>
-        <div className="plan-cap">Para empezar a ordenar la agenda</div>
-        <div className="plan-lim"><span className="chip">2 profesionales</span><span className="chip">400 turnos/mes</span><span className="chip">600 WhatsApp/mes</span><span className="chip">10 informes IA</span></div>
-        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Dashboard</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Turnos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Clientes</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Fichas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>WhatsApp automático</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>CRM</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Campañas push</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Portal de reservas</li></ul>
+        <div className="price">$85.000<small>/mes</small></div>
+        <div className="plan-cap">El centro que dejó de ser una persona</div>
+        <div className="plan-lim"><span className="chip">3 profesionales</span><span className="chip">500 turnos/mes</span><span className="chip">2.000 WhatsApp/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div><div className="plan top rv"><span className="plan-flag">Más elegido</span>
         <h3>Profesional</h3>
         <div className="price">$120.000<small>/mes</small></div>
-        <div className="plan-cap">El que elige la mayoría de los centros</div>
-        <div className="plan-lim"><span className="chip">5 profesionales</span><span className="chip">1200 turnos/mes</span><span className="chip">3000 WhatsApp/mes</span><span className="chip">200 push/mes</span><span className="chip">50 informes IA</span></div>
-        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Todo lo de Inicial</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>CRM</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Cobros</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Encuestas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Campañas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Calificación</li><li className="no"><svg viewBox="0 0 24 24" fill="none" stroke="#C6CAD6" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Portal de reservas</li></ul>
+        <div className="plan-cap">El centro con equipo armado</div>
+        <div className="plan-lim"><span className="chip">6 profesionales</span><span className="chip">1.500 turnos/mes</span><span className="chip">4.000 WhatsApp/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-grad">Empezar gratis</a>
       </div><div className="plan  rv">
         <h3>Premium</h3>
-        <div className="price">$150.000<small>/mes</small></div>
-        <div className="plan-cap">Para centros con varias sucursales</div>
-        <div className="plan-lim"><span className="chip">10 profesionales</span><span className="chip">2500 turnos/mes</span><span className="chip">7000 WhatsApp/mes</span><span className="chip">500 push/mes</span><span className="chip">50 informes IA</span></div>
-        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Todo completo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="#12B886" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="m5 13 4 4L19 7"/></svg>Portal de reservas público</li></ul>
+        <div className="price">$160.000<small>/mes</small></div>
+        <div className="plan-cap">El centro grande o con foco clínico</div>
+        <div className="plan-lim"><span className="chip">12 profesionales</span><span className="chip">turnos sin tope</span><span className="chip">8.000 WhatsApp/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div></div>
-        <p className="center lead" style={{marginTop: '36px', fontSize: '.9rem'}}>¿Más de 10 profesionales o varias sucursales? <Link href="/#contacto" style={{color: 'var(--blue)', fontWeight: '600'}}>Hablemos de un plan a medida</Link></p>
+
+        <div className="tabla-wrap rv">
+          <table className="cmp">
+            <thead>
+              <tr><th>Lo que cambia</th><th>Independiente</th><th>Inicial</th><th>Profesional</th><th>Premium</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Profesionales</td><td>1</td><td>3</td><td>6</td><td>12</td></tr>
+              <tr><td>Turnos por mes</td><td>250</td><td>500</td><td>1.500</td><td>sin tope</td></tr>
+              <tr><td>Sedes incluidas</td><td>1</td><td>1</td><td>1</td><td>2</td></tr>
+              <tr><td>WhatsApp por mes</td><td>700</td><td>2.000</td><td>4.000</td><td>8.000</td></tr>
+              <tr><td>Sugerencias de cupones con IA</td><td>50</td><td>200</td><td>400</td><td>1.500</td></tr>
+              <tr><td>Informes de cosmiatría con IA</td><td>5</td><td>10</td><td>25</td><td>50</td></tr>
+              <tr><td>Campañas push por mes</td><td>—</td><td>1.000</td><td>2.000</td><td>6.000</td></tr>
+              <tr><td>Encuestas de satisfacción</td><td>—</td><td>sí</td><td>sí</td><td>sí</td></tr>
+              <tr><td>Soporte prioritario</td><td>—</td><td>sí</td><td>sí</td><td>sí</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="planes-pie rv">
+          <p><strong>¿Más de una sede?</strong> Cualquier plan suma sucursales: la primera adicional se cobra al 80% del plan y cada una desde la tercera, al 75%.</p>
+          <p><strong>Quince días gratis, sin tarjeta.</strong> No pedimos datos de pago para empezar y podés dar de baja cuando quieras, sin permanencia.</p>
+          <p><strong>Precios vigentes a agosto de 2026.</strong> Los ajustes se avisan con treinta días de anticipación, rigen desde el período siguiente y nunca son retroactivos.</p>
+        </div>
       </div>
       </section><section className="section" id="faq" style={{background: 'var(--mist)'}}>
       <div className="wrap">
@@ -223,7 +266,7 @@ export default function Page() {
           <span className="eyebrow">Preguntas</span>
           <h2 style={{marginTop: '16px'}}>Lo que todos preguntan antes de empezar</h2>
         </div>
-        <div className="cards c2"><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Tengo que instalar algo?</h3><p style={{fontSize: '.88rem'}}>No. Nexo funciona en el navegador, en la computadora del mostrador y en el celular de cada profesional. Se ingresa con usuario y contraseña.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Los mensajes salen de mi número de WhatsApp?</h3><p style={{fontSize: '.88rem'}}>Sí. Se conecta tu propia línea, así el cliente recibe el mensaje de tu centro y te puede responder ahí mismo.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Qué pasa con los datos de mis clientes?</h3><p style={{fontSize: '.88rem'}}>Son tuyos. Cada centro tiene su información aislada del resto y podés exportarla cuando quieras.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Y si tengo más de una sucursal?</h3><p style={{fontSize: '.88rem'}}>El plan Premium contempla sucursales, con agenda y profesionales separados pero una sola base de clientes.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Me puedo dar de baja?</h3><p style={{fontSize: '.88rem'}}>Cuando quieras, sin permanencia. Los primeros 15 días son gratis y no pedimos tarjeta para empezar.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Sirve si no soy un centro de estética?</h3><p style={{fontSize: '.88rem'}}>Sí. Está pensado para cualquier negocio que trabaje con turnos y profesionales; las fichas clínicas son opcionales.</p></div></div>
+        <div className="cards c2"><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Tengo que instalar algo?</h3><p style={{fontSize: '.88rem'}}>No. Nexo funciona en el navegador, en la computadora del mostrador y en el celular de cada profesional. Se ingresa con usuario y contraseña.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Los mensajes salen de mi número de WhatsApp?</h3><p style={{fontSize: '.88rem'}}>Sí. Se conecta tu propia línea, así el cliente recibe el mensaje de tu centro y te puede responder ahí mismo.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Qué pasa con los datos de mis clientes?</h3><p style={{fontSize: '.88rem'}}>Son tuyos. Cada centro tiene su información aislada del resto y podés pedir una exportación cuando quieras.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Y si tengo más de una sucursal?</h3><p style={{fontSize: '.88rem'}}>Cualquier plan suma sucursales, con agenda y profesionales separados pero una sola base de clientes. Premium incluye dos sedes; en los demás la primera adicional se cobra al 80% del plan.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Me puedo dar de baja?</h3><p style={{fontSize: '.88rem'}}>Cuando quieras, sin permanencia. Los primeros 15 días son gratis y no pedimos tarjeta para empezar.</p></div><div className="card rv" style={{padding: '26px'}}><h3 style={{fontSize: '1rem'}}>¿Sirve si no soy un centro de estética?</h3><p style={{fontSize: '.88rem'}}>Sí. Está pensado para cualquier negocio que trabaje con turnos y profesionales; las fichas clínicas son opcionales.</p></div></div>
       </div>
       </section><section className="section">
       <div className="wrap">
