@@ -213,6 +213,7 @@ export default function Page() {
         <h3>Independiente</h3>
         <div className="price">$55.000<small>/mes</small></div>
         <div className="plan-cap">Para la que atiende sola</div>
+        <div className="plan-destacado">Incluye la ficha cosmiátrica completa</div>
         <div className="plan-lim"><span className="chip">1 profesional</span><span className="chip">250 turnos/mes</span><span className="chip">700 WhatsApp/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div><div className="plan  rv">
