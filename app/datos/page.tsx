@@ -65,6 +65,43 @@ export default function Page() {
           consentimiento, pero no reemplaza tu obligación de pedirlo.
         </p>
 
+        <h2>Inteligencia artificial</h2>
+        <p>
+          Algunas funciones del sistema se apoyan en un servicio de inteligencia
+          artificial de un tercero: <strong>Anthropic</strong>{' '}
+          (<code>api.anthropic.com</code>), radicado fuera de la Argentina.
+          Conviene que sepas exactamente qué se le envía, porque en dos de los
+          tres casos se trata de datos de salud.
+        </p>
+        <ul>
+          <li>
+            <strong>Sugerencias de cupones.</strong> Se envía el nombre de la
+            clienta, su identificador interno, el criterio por el que fue
+            seleccionada y un resumen de su comportamiento: cuándo vino, qué
+            servicios se hizo y hace cuánto que no vuelve.
+          </li>
+          <li>
+            <strong>Informe comparativo de fichas.</strong> Se envían los
+            recortes de las fotografías de tratamiento.
+          </li>
+          <li>
+            <strong>Informes de cosmiatría.</strong> Se envían las fotografías y
+            los antecedentes cargados en la ficha.
+          </li>
+        </ul>
+        <p>
+          En los tres casos el resultado es una sugerencia o un informe que{' '}
+          <strong>queda a tu aprobación</strong>: nada se le envía a tu clienta
+          ni se guarda en su ficha sin que vos lo apruebes.
+        </p>
+        <p>
+          Como esto involucra datos sensibles y un tercero radicado en otro
+          país, <strong>el consentimiento que le pedís a tu clienta debería
+          contemplarlo expresamente</strong>. Si necesitás ayuda para redactarlo,
+          escribinos a{' '}
+          <a href="mailto:comercial@clovix.app">comercial@clovix.app</a>.
+        </p>
+
         <h2>Los mensajes</h2>
         <p>
           Los recordatorios, encuestas y campañas salen desde tu propia línea de

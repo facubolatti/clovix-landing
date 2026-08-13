@@ -1,0 +1,55 @@
+P-85: /datos dice que las fotos y los antecedentes se procesan con IA de un tercero
+
+QUE FALTABA
+
+Ninguno de los tres documentos legales publicados mencionaba que el sistema le
+manda datos de las clientas a un servicio de inteligencia artificial de un
+tercero. Salio del cruce del 11/08 entre lo que los textos prometen y lo que el
+sistema hace (`informe-legal-vs-sistema.md`, seccion 2.1).
+
+POR QUE ERA EL MAS IMPORTANTE DE LOS PENDIENTES LEGALES BARATOS
+
+Dos de los tres envios son **datos de salud**: los recortes de las fotografias
+de tratamiento y los antecedentes de la ficha. El propio `/datos` explica que
+la Ley 25.326 los protege de manera especial.
+
+El texto describia a los terceros como *"proveedores de infraestructura"* que
+*"acceden solo a lo necesario"*. Eso alcanza para decir donde esta alojada la
+base. **No alcanza para describir mandarle la foto de una paciente a un modelo
+de un tercero en otro pais para que la analice.**
+
+Y la consecuencia practica: el centro es el responsable de esos datos y **no
+podia enterarse leyendo lo que Clovix publica**. El consentimiento que el
+centro le pide a la clienta tampoco lo cubre, porque nadie sabia que habia que
+cubrirlo.
+
+QUE DICE AHORA
+
+Una seccion nueva, "Inteligencia artificial", con el proveedor nombrado
+—Anthropic— y las tres funciones detalladas una por una con lo que envia cada
+una. Mas dos aclaraciones:
+
+  · que el resultado **queda a aprobacion del centro** —eso ya era cierto y el
+    texto lo decia en otro lado; aca importa que se lea junto a lo demas—;
+  · que **el consentimiento que el centro pide deberia contemplarlo**, que es
+    la parte que lo protege a el.
+
+LO QUE A PROPOSITO NO SE ESCRIBIO
+
+**No se afirma nada sobre si el proveedor entrena modelos con esos datos.** Es
+lo primero que uno querria poner y es exactamente lo que no hay que poner sin
+verificarlo contra las condiciones del proveedor. Un texto legal que afirma de
+mas es peor que uno que dice menos.
+
+LO QUE SIGUE ABIERTO EN ESTE MISMO ARCHIVO
+
+**"Pasado un plazo prudencial" no es un plazo.** Sigue ahi, en "Que pasa si te
+das de baja". Hay que poner un numero —30 dias, 60— y decidir que se borra
+exactamente, porque los cobros probablemente haya que conservarlos por
+obligaciones contables. Es una decision, no una redaccion.
+
+Y en `/privacidad` queda pendiente sumar el **hash de IP** del formulario de
+contacto, que son dos palabras.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Dvtz3vmB93v2DFbcTjQ8Kr
