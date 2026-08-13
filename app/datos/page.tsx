@@ -130,9 +130,18 @@ export default function Page() {
         <h2>Qué pasa si te das de baja</h2>
         <p>
           Podés pedir una <strong>exportación completa</strong> de tu información
-          antes de irte. Después de la baja, y pasado un plazo prudencial para que
-          puedas recuperarla si cambiaste de idea, eliminamos los datos de tus
-          clientes de los sistemas activos.
+          antes de irte: escribinos y te la preparamos.
+        </p>
+        <p>
+          Después de la baja conservamos tus datos <strong>60 días</strong>, para
+          que puedas recuperar la cuenta si cambiaste de idea. Pasado ese plazo,
+          eliminamos de los sistemas activos los datos de tus clientes: fichas,
+          turnos, contactos e historial.
+        </p>
+        <p>
+          Se conservan por más tiempo, y solo esos, los{' '}
+          <strong>registros de cobros y facturación</strong>, porque las
+          obligaciones contables e impositivas nos obligan a guardarlos.
         </p>
 
         <h2>Derechos de tus clientes</h2>
