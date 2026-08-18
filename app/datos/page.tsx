@@ -13,7 +13,9 @@ export const metadata: Metadata = {
   title: "Tratamiento de datos",
   description: "Acuerdo de tratamiento de datos: el negocio es responsable de la base de sus clientes y Clovix es encargado del tratamiento.",
   alternates: { canonical: "/datos" },
-  robots: { index: true, follow: true },
+  // Fuera de Google desde el 18/08: la landing no muestra seccion legal.
+  // La pagina sigue respondiendo si alguien tiene la direccion.
+  robots: { index: false, follow: false },
 };
 
 export default function Page() {
@@ -155,9 +157,7 @@ export default function Page() {
         <div className="nota">
           <p style={{ marginBottom: 0 }}>
             Este documento está redactado en lenguaje claro y a nombre de Clovix
-            (clovix.app). Cuando se declare la razón social titular del servicio,
-            corresponde completar aquí el nombre, el CUIT y el domicilio legal.
-            Ante cualquier duda escribinos a{' '}
+            (clovix.app). Ante cualquier duda escribinos a{' '}
             <a href="mailto:comercial@clovix.app">comercial@clovix.app</a>.
           </p>
         </div>

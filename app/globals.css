@@ -412,7 +412,9 @@ section[id]{scroll-margin-top:76px}
 
 /* ── footer ─────────────────────────────────────────────── */
 .foot{background:var(--night);color:rgba(255,255,255,.6);padding:70px 0 34px;position:relative;overflow:hidden}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px}
+/* Tres columnas desde el 18/08: salió la de "Legal". Con las cuatro de antes,
+   el pie quedaba con una franja vacía a la derecha. */
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px}
 @media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
 .foot .mark{width:142px;height:44px;margin-bottom:18px}
 .foot p{font-size:.875rem;line-height:1.65;max-width:280px}

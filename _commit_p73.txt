@@ -1,0 +1,70 @@
+La landing deja de mostrar seccion legal, y las tres paginas salen de Google (P-73)
+
+LA DECISION
+
+**Por ahora la landing no muestra terminos, privacidad ni tratamiento de datos.**
+Y no se publican razon social, CUIT ni domicilio: la facturacion va a ser
+manual, asi que el dato no hace falta publicado para cobrar.
+
+QUE SE SACA, Y QUE NO
+
+**Se saca la columna "Legal" del pie**, que aparecia en todas las paginas del
+sitio con los tres enlaces. Esa era la seccion visible.
+
+**Las tres paginas no se borran.** Quedan con `noindex`: dejan de aparecer en
+buscadores y no se llega a ellas navegando, pero **siguen respondiendo si
+alguien tiene la direccion**.
+
+El motivo de no borrarlas es concreto: **MercadoPago, el ingreso con Google y
+las tiendas de aplicaciones suelen pedir una URL de politica de privacidad.**
+Escribir esos textos de nuevo es caro; tenerlos apagados no cuesta nada.
+
+**No hay sitemap ni robots.txt en este proyecto**, asi que el `robots` del
+metadata es la unica senal que recibe Google y no hay nada que la contradiga.
+
+Y DE PASO, LA FRASE QUE ANUNCIABA EL AGUJERO
+
+Los tres documentos terminaban diciendo:
+
+    "Cuando se declare la razon social titular del servicio, corresponde
+     completar aqui el nombre, el CUIT y el domicilio legal."
+
+**Eso era peor que las dos opciones.** No publicar el dato es una decision; un
+documento que **avisa por escrito que le falta un dato** le dice al lector que
+lo que esta leyendo no esta terminado, justo en el parrafo donde se dice con
+quien contrata. Era una nota interna que quedo publicada. Se borra esa unica
+frase; el resto del parrafo queda igual.
+
+EL PIE PASA DE CUATRO COLUMNAS A TRES
+
+`grid-template-columns` estaba fijo en `1.5fr 1fr 1fr 1fr`. Sacando una columna
+sin tocar el CSS, **el pie quedaba con una franja vacia a la derecha.**
+
+LO QUE ESTO NO RESUELVE, Y QUEDA DICHO
+
+**`/datos` no es un texto legal mas.** Es el que dice que las fotos de
+tratamiento y los antecedentes de las clientas se procesan con un servicio de IA
+de un tercero fuera del pais. **Esa practica sigue existiendo aunque el texto no
+se muestre.** Por eso la pagina se apaga y no se borra.
+
+**No soy abogado.** Antes del primer cobro a un centro que no sea conocido vale
+una consulta corta: en Argentina la normativa de defensa del consumidor suele
+exigir que quien vende se identifique en el sitio, y puede que mostrar estos
+textos no sea opcional cuando haya cobros de terceros.
+
+COMO SE VERIFICA
+
+  · El pie de cualquier pagina: **no tiene que haber columna "Legal"**, y las
+    tres columnas restantes tienen que ocupar el ancho sin hueco a la derecha.
+  · `clovix.app/terminos` **tiene que seguir abriendo**.
+  · En el codigo fuente de esa pagina tiene que aparecer
+    `<meta name="robots" content="noindex, nofollow">`.
+
+COMO SE VUELVE ATRAS
+
+Reponer el bloque del pie —esta comentado en el archivo, con las instrucciones—,
+volver `robots` a `index: true` en las tres paginas y devolver la cuarta columna
+al CSS.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Dvtz3vmB93v2DFbcTjQ8Kr

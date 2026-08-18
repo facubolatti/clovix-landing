@@ -28,14 +28,19 @@ export function Footer() {
               <li><a href="https://nexo.clovix.app/login">Ingresar al sistema</a></li>
             </ul>
           </div>
-          <div>
-            <h4>Legal</h4>
-            <ul>
-              <li><Link href="/terminos">Términos y condiciones</Link></li>
-              <li><Link href="/privacidad">Política de privacidad</Link></li>
-              <li><Link href="/datos">Tratamiento de datos</Link></li>
-            </ul>
-          </div>
+          {/*
+            La columna "Legal" salió el 18/08 por decisión de Daniel: la landing
+            no muestra una sección de términos por ahora.
+
+            **Las tres páginas siguen existiendo** —/terminos, /privacidad y
+            /datos— con `noindex`, así que no salen en Google pero responden si
+            alguien tiene la dirección. Se dejaron porque MercadoPago, Google y
+            las tiendas de aplicaciones suelen pedir una URL de política de
+            privacidad, y reescribirlas de cero es caro.
+
+            Para volver a mostrarlas: reponer este bloque y poner
+            `robots: { index: true, follow: true }` en las tres páginas.
+          */}
         </div>
         <div className="foot-bot">
           <span>© {new Date().getFullYear()} Clovix · Todos los derechos reservados</span>
