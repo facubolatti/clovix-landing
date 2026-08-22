@@ -424,6 +424,14 @@ section[id]{scroll-margin-top:76px}
 .foot a:hover{color:#fff}
 .foot-bot{margin-top:54px;padding-top:26px;border-top:1px solid rgba(255,255,255,.09);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.82rem}
 
+/* P-05 · El boton de arrepentimiento no puede leerse como el copyright.
+   La Disposicion 954/2025 pide "lugar destacado", y al lado de un texto al
+   60% de opacidad eso no se cumple. Va en blanco pleno, con subrayado, para
+   que se lea como lo que es: un enlace, no una linea de pie.
+   Si se le saca el color o el subrayado, deja de estar destacado. */
+.foot-arrep{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.foot-arrep:hover{text-decoration-thickness:2px}
+
 /* ── revelado ───────────────────────────────────────────── */
 /* El contenido NUNCA se oculta. Antes las secciones arrancaban en opacity 0 y
    dependian de que un script las encendiera: si eso fallaba o llegaba tarde,

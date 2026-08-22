@@ -44,6 +44,35 @@ export function Footer() {
         </div>
         <div className="foot-bot">
           <span>© {new Date().getFullYear()} Clovix · Todos los derechos reservados</span>
+
+          {/*
+            ── P-05 · BOTON DE ARREPENTIMIENTO ─────────────────────────────
+            Esto NO comparte destino con la columna "Legal" que salió el 18/08.
+            Aquellas páginas se ocultaron por decisión de producto y se puede
+            volver a decidir. Esta no: la Disposición 954/2025 obliga a que el
+            botón esté "a simple vista, en lugar destacado y en el primer
+            acceso", con ese nombre exacto.
+
+            Por eso va acá y no en una columna: el pie de página inferior está
+            en TODAS las páginas del sitio y no depende de que la grilla de
+            arriba tenga tres columnas o cuatro. Y por eso tiene clase propia
+            —`foot-arrep`— en vez de heredar el gris del copyright: al lado de
+            un texto tenue, "destacado" no se cumple.
+
+            El destino es absoluto y apunta a nexo.clovix.app porque la página
+            vive en el repo de la aplicación, no en este. `/arrepentimiento` en
+            este sitio da 404.
+
+            ⚠ Si se borra o se apaga, se rompe una obligación legal y NADA
+            FALLA: no hay error, no hay alerta. Solo deja de encontrarse.
+          */}
+          <a
+            className="foot-arrep"
+            href="https://nexo.clovix.app/arrepentimiento"
+          >
+            Botón de arrepentimiento
+          </a>
+
           <span>comercial@clovix.app · Argentina</span>
         </div>
       </div>
