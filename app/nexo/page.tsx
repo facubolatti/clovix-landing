@@ -211,31 +211,31 @@ export default function Page() {
 
         <div className="plans"><div className="plan  rv">
         <h3>Independiente</h3>
-        <div className="price">$55.000<small>/mes</small></div>
+        <div className="price">$75.000<small>/mes</small></div>
         <div className="plan-cap">Para la que atiende sola</div>
         <div className="plan-destacado">Incluye la ficha cosmiátrica completa</div>
-        <div className="plan-lim"><span className="chip">1 profesional</span><span className="chip">250 turnos/mes</span><span className="chip">500 notificaciones/mes</span></div>
+        <div className="plan-lim"><span className="chip">1 profesional</span><span className="chip">250 turnos/mes</span><span className="chip">700 notificaciones/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div><div className="plan  rv">
         <h3>Inicial</h3>
-        <div className="price">$85.000<small>/mes</small></div>
+        <div className="price">$105.000<small>/mes</small></div>
         <div className="plan-cap">El centro que dejó de ser una persona</div>
         <div className="plan-destacado">Suma encuestas y campañas push</div>
         <div className="plan-lim"><span className="chip">3 profesionales</span><span className="chip">500 turnos/mes</span><span className="chip">1.300 notificaciones/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div><div className="plan top rv"><span className="plan-flag">Más elegido</span>
         <h3>Profesional</h3>
-        <div className="price">$120.000<small>/mes</small></div>
+        <div className="price">$140.000<small>/mes</small></div>
         <div className="plan-cap">El centro con equipo armado</div>
         <div className="plan-destacado">El doble de cupos, para un equipo de seis</div>
-        <div className="plan-lim"><span className="chip">6 profesionales</span><span className="chip">1.500 turnos/mes</span><span className="chip">2.500 notificaciones/mes</span></div>
+        <div className="plan-lim"><span className="chip">6 profesionales</span><span className="chip">1.500 turnos/mes</span><span className="chip">4.000 notificaciones/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-grad">Empezar gratis</a>
       </div><div className="plan  rv">
         <h3>Premium</h3>
-        <div className="price">$160.000<small>/mes</small></div>
+        <div className="price">$180.000<small>/mes</small></div>
         <div className="plan-cap">El centro grande o con foco clínico</div>
-        <div className="plan-destacado">Dos sedes incluidas y turnos sin tope</div>
-        <div className="plan-lim"><span className="chip">12 profesionales</span><span className="chip">turnos sin tope</span><span className="chip">5.000 notificaciones/mes</span></div>
+        <div className="plan-destacado">Dos sedes incluidas y el mayor volumen de cupos</div>
+        <div className="plan-lim"><span className="chip">12 profesionales</span><span className="chip">3.000 turnos/mes</span><span className="chip">8.000 notificaciones/mes</span></div>
         <a href={NEXO_SIGNUP} className="btn btn-ink">Empezar gratis</a>
       </div></div>
 
@@ -246,9 +246,9 @@ export default function Page() {
             </thead>
             <tbody>
               <tr><td>Profesionales</td><td>1</td><td>3</td><td>6</td><td>12</td></tr>
-              <tr><td>Turnos por mes</td><td>250</td><td>500</td><td>1.500</td><td>sin tope</td></tr>
+              <tr><td>Turnos por mes</td><td>250</td><td>500</td><td>1.500</td><td>3.000</td></tr>
               <tr><td>Sedes incluidas</td><td>1</td><td>1</td><td>1</td><td>2</td></tr>
-              <tr><td>Notificaciones por mes <span style={{opacity:.6}}>(WhatsApp o app)</span></td><td>500</td><td>1.300</td><td>2.500</td><td>5.000</td></tr>
+              <tr><td>Notificaciones por mes <span style={{opacity:.6}}>(WhatsApp o app)</span></td><td>700</td><td>1.300</td><td>4.000</td><td>8.000</td></tr>
               <tr><td>Sugerencias de cupones con IA</td><td>50</td><td>200</td><td>400</td><td>1.500</td></tr>
               <tr><td>Informes de cosmiatría con IA</td><td>5</td><td>10</td><td>25</td><td>50</td></tr>
               <tr><td>Campañas push por mes</td><td>—</td><td>1.000</td><td>2.000</td><td>6.000</td></tr>
@@ -262,7 +262,7 @@ export default function Page() {
           <p><strong>¿Qué cuenta como notificación?</strong> Cada aviso que le llega a tu clienta: el recordatorio antes del turno, el mensaje después del servicio y los cupones. Da igual si sale por WhatsApp o como notificación a la app — si tiene la app instalada le llega por ahí, que es más rápido y no depende del canal de WhatsApp.</p>
           <p><strong>¿Más de una sede?</strong> Cualquier plan suma sucursales: la primera adicional se cobra al 80% del plan y cada una desde la tercera, al 75%.</p>
           <p><strong>Quince días gratis, sin tarjeta.</strong> No pedimos datos de pago para empezar y podés dar de baja cuando quieras, sin permanencia.</p>
-          <p><strong>Precios vigentes a agosto de 2026.</strong> Los ajustes se avisan con treinta días de anticipación, rigen desde el período siguiente y nunca son retroactivos.</p>
+          <p><strong>Precios vigentes a septiembre de 2026.</strong> Los ajustes se avisan con treinta días de anticipación, rigen desde el período siguiente y nunca son retroactivos.</p>
         </div>
       </div>
       </section><section className="section" id="faq" style={{background: 'var(--mist)'}}>
