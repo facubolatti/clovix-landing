@@ -129,6 +129,12 @@ section[id]{scroll-margin-top:76px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
 .hero-note{margin-top:22px;font-size:.84rem;color:rgba(255,255,255,.42);display:flex;flex-wrap:wrap;gap:8px 18px}
 .hero-note span{display:flex;align-items:center;gap:7px}
+/* Los rubros de /soluciones. Hasta el 19/10 no tenían ninguna regla: los
+   <span> van pegados en el código, así que el texto salía como una sola palabra
+   ("Centros de estéticaSalones de belleza…") y en el celular, al no poder cortar,
+   se salía de la pantalla. Como chips, cada uno es una pieza y bajan de renglón. */
+.rubros{margin-top:26px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.72)}
+.rubros span{padding:6px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05)}
 .dot-ok{width:6px;height:6px;border-radius:99px;background:var(--emerald);box-shadow:0 0 0 3px rgba(18,184,134,.18)}
 .badge-pill{
   display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 10px;border-radius:999px;
@@ -144,7 +150,12 @@ section[id]{scroll-margin-top:76px}
   .badge-pill .sep{display:none}
   .badge-pill em{width:100%;font-size:.68rem}
 }
-@media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero .lead{max-width:none}}
+/* `min-width:0` en los hijos: una columna `1fr` no baja del ancho mínimo de su
+   contenido, y la ventana de la agenda de /nexo no baja de ~410 px. Sin esto la
+   columna medía 410 en cualquier celular, el título también, y el overflow de
+   la sección le cortaba "co" a la derecha. Va solo en el hero: la sección de IA
+   de la home usa la misma grilla y tiene su propio desborde a 360 px, pendiente. */
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero .hero-grid>*{min-width:0}.hero .lead{max-width:none}}
 
 /* ── malla de nodos decorativa ──────────────────────────── */
 .nodes{position:absolute;pointer-events:none;opacity:.24}
