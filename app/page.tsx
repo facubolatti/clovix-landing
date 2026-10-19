@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { BotonWhatsApp } from "@/components/BotonWhatsApp";
+import { enlaceWhatsApp, MENSAJES_WHATSAPP, WHATSAPP_VISIBLE } from "@/lib/contacto";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -189,11 +191,15 @@ export default function Page() {
               <div className="ch"><span className="ch-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><b>Demo en vivo</b><span>30 minutos por videollamada, cuando te quede cómodo</span></div></div>
             </div>
           </div>
-          <ContactForm />
+          <div>
+            <ContactForm />
+            <p className="wa-alt">¿Preferís WhatsApp? <a href={enlaceWhatsApp(MENSAJES_WHATSAPP.home)} target="_blank" rel="noopener noreferrer">{WHATSAPP_VISIBLE}</a></p>
+          </div>
         </div>
       </div>
       </section>
-      <Footer />
+      <Footer whatsapp={MENSAJES_WHATSAPP.home} />
+      <BotonWhatsApp mensaje={MENSAJES_WHATSAPP.home} />
     </>
   )
 }

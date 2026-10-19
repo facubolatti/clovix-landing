@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { BotonWhatsApp } from "@/components/BotonWhatsApp";
+import { enlaceWhatsApp, MENSAJES_WHATSAPP, WHATSAPP_VISIBLE } from "@/lib/contacto";
 import { NEXO_SIGNUP, NEXO_LOGIN } from "@/lib/urls";
 
 export const metadata: Metadata = {
@@ -289,10 +291,12 @@ export default function Page() {
             <a href={NEXO_LOGIN} className="btn btn-ghost">Ya soy usuario</a>
           </div>
           <p style={{fontSize: '.83rem', color: 'rgba(255,255,255,.72)', marginTop: '22px'}}>Sin tarjeta de crédito · 15 días gratis · Cancelás cuando querés</p>
+          <p className="wa-alt">¿Preferís WhatsApp? <a href={enlaceWhatsApp(MENSAJES_WHATSAPP.nexo)} target="_blank" rel="noopener noreferrer">{WHATSAPP_VISIBLE}</a></p>
         </div>
       </div>
       </section>
-      <Footer />
+      <Footer whatsapp={MENSAJES_WHATSAPP.nexo} />
+      <BotonWhatsApp mensaje={MENSAJES_WHATSAPP.nexo} />
     </>
   )
 }

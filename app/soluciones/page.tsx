@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { BotonWhatsApp } from "@/components/BotonWhatsApp";
+import { MENSAJES_WHATSAPP } from "@/lib/contacto";
 import { NEXO_SIGNUP } from "@/lib/urls";
 
 export const metadata: Metadata = {
@@ -115,7 +117,8 @@ export default function Page() {
         </div>
       </div>
       </section>
-      <Footer />
+      <Footer whatsapp={MENSAJES_WHATSAPP.soluciones} />
+      <BotonWhatsApp mensaje={MENSAJES_WHATSAPP.soluciones} />
     </>
   )
 }

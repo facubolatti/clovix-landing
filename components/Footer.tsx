@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { Nodes } from "./Nodes";
+import { enlaceWhatsApp, WHATSAPP_VISIBLE } from "@/lib/contacto";
 
-export function Footer() {
+/**
+ * `whatsapp` es el mensaje precargado de la página. Las páginas legales no lo
+ * pasan y su pie queda sin la línea de WhatsApp.
+ */
+export function Footer({ whatsapp }: { whatsapp?: string } = {}) {
   return (
     <footer className="foot">
       <Nodes variant="b" />
@@ -72,6 +77,12 @@ export function Footer() {
           >
             Botón de arrepentimiento
           </a>
+
+          {whatsapp && (
+            <a href={enlaceWhatsApp(whatsapp)} target="_blank" rel="noopener noreferrer">
+              WhatsApp {WHATSAPP_VISIBLE}
+            </a>
+          )}
 
           <span>comercial@clovix.app · Argentina</span>
         </div>

@@ -432,6 +432,21 @@ section[id]{scroll-margin-top:76px}
 .foot-arrep{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
 .foot-arrep:hover{text-decoration-thickness:2px}
 
+/* ── WhatsApp ───────────────────────────────────────────── */
+/* Verde de WhatsApp con borde blanco y sombra: se recorta igual sobre el fondo
+   oscuro del hero y del pie que sobre las secciones blancas. `.apartado` lo
+   pone el propio botón cuando tiene otro botón debajo (ver BotonWhatsApp). */
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:90;width:56px;height:56px;border-radius:50%;
+  display:grid;place-items:center;background:#25D366;color:#fff;border:2px solid #fff;
+  box-shadow:0 6px 20px rgba(12,12,24,.28);transition:opacity .2s,transform .2s}
+.wa-float svg{width:30px;height:30px}
+.wa-float:hover{transform:translateY(-2px)}
+.wa-float.apartado{opacity:0;pointer-events:none;transform:scale(.85)}
+.wa-alt{margin-top:18px;font-size:.9rem;color:var(--muted);text-align:center}
+.wa-alt a{white-space:nowrap;color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.cta-box .wa-alt{color:rgba(255,255,255,.86)}
+.cta-box .wa-alt a{color:#fff}
+
 /* ── revelado ───────────────────────────────────────────── */
 /* El contenido NUNCA se oculta. Antes las secciones arrancaban en opacity 0 y
    dependian de que un script las encendiera: si eso fallaba o llegaba tarde,
