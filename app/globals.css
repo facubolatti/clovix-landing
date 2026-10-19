@@ -151,11 +151,19 @@ section[id]{scroll-margin-top:76px}
   .badge-pill em{width:100%;font-size:.68rem}
 }
 /* `min-width:0` en los hijos: una columna `1fr` no baja del ancho mínimo de su
-   contenido, y la ventana de la agenda de /nexo no baja de ~410 px. Sin esto la
-   columna medía 410 en cualquier celular, el título también, y el overflow de
-   la sección le cortaba "co" a la derecha. Va solo en el hero: la sección de IA
-   de la home usa la misma grilla y tiene su propio desborde a 360 px, pendiente. */
-@media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero .hero-grid>*{min-width:0}.hero .lead{max-width:none}}
+   contenido, así que una ventana de demo ancha estira la columna entera y lo
+   que comparte la columna con ella queda más ancho que la pantalla, recortado
+   por el overflow de la sección. Pasaba en dos lugares:
+     · /nexo, hero: la agenda no baja de ~410 px y al título le cortaba "co" (7dd26e1).
+     · home, "La IA que ya está funcionando": las sugerencias piden 313 px y a
+       360 px de pantalla la columna tiene 232; quedaban cortadas 17 px (19/10).
+   Va para todas las .hero-grid: medido el 19/10, en las otras dos de /nexo no
+   cambia nada. */
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero-grid>*{min-width:0}.hero .lead{max-width:none}
+  /* Con la ventana ya angosta, la dirección de la barra (sugerencias-ia en la
+     home, a 360 px) no entraba. Se parte solo donde se saldría: donde ya entra
+     no cambia nada. */
+  .win-url{min-width:0;overflow-wrap:anywhere}}
 
 /* ── malla de nodos decorativa ──────────────────────────── */
 .nodes{position:absolute;pointer-events:none;opacity:.24}
@@ -228,7 +236,7 @@ section[id]{scroll-margin-top:76px}
 }
 .win-flat .win{transform:none}
 .win-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#F3F4F8;border-bottom:1px solid var(--line)}
-.win-bar i{width:9px;height:9px;border-radius:99px;background:#D9DBE3;display:block}
+.win-bar i{width:9px;height:9px;border-radius:99px;background:#D9DBE3;display:block;flex-shrink:0}
 .win-url{margin-left:10px;flex:1;background:#fff;border-radius:7px;padding:4px 12px;font-size:.68rem;color:#8A8FA0;border:1px solid var(--line)}
 
 /* ── agenda moderna ─────────────────────────────────────── */
