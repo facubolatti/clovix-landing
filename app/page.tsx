@@ -8,11 +8,11 @@ import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Clovix — Proveedor de soluciones de inteligencia artificial",
-  description: "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: una plataforma propia de productos SaaS con inteligencia artificial adentro.",
+  description: "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: una plataforma propia de productos SaaS con inteligencia artificial incorporada.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Clovix — Proveedor de soluciones de inteligencia artificial",
-    description: "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: una plataforma propia de productos SaaS con inteligencia artificial adentro.",
+    description: "Clovix construye y opera soluciones de inteligencia artificial para negocios de servicios: una plataforma propia de productos SaaS con inteligencia artificial incorporada.",
     url: "/",
     siteName: "Clovix",
     locale: "es_AR",
