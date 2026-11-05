@@ -55,7 +55,8 @@ export default function Page() {
           Terminada la prueba, para seguir usando el sistema hay que contratar uno
           de los planes vigentes. Cada plan tiene sus propios límites —cantidad de
           profesionales, de turnos, de mensajes y de informes— publicados en el
-          sitio al momento de contratar.
+          sitio al momento de contratar. La conexión de WhatsApp no está incluida
+          en la prueba: se habilita al contratar un plan.
         </p>
         <p>
           Los precios están expresados en pesos argentinos y pueden actualizarse.
