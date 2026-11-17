@@ -264,7 +264,7 @@ export default function Page() {
           <p><strong>¿Qué cuenta como notificación?</strong> Cada aviso que le llega a tu clienta: el recordatorio antes del turno, el mensaje después del servicio y los cupones. Da igual si sale por WhatsApp o como notificación a la app — si tiene la app instalada le llega por ahí, que es más rápido y no depende del canal de WhatsApp.</p>
           <p><strong>¿Más de una sede?</strong> Cualquier plan suma sucursales: la primera adicional se cobra al 80% del plan y cada una desde la tercera, al 75%.</p>
           <p><strong>Quince días gratis, sin tarjeta.</strong> No pedimos datos de pago para empezar y podés dar de baja cuando quieras, sin permanencia.</p>
-          <p><strong>Precios vigentes a septiembre de 2026.</strong> Los ajustes se avisan con treinta días de anticipación, rigen desde el período siguiente y nunca son retroactivos.</p>
+          <p><strong>Precios vigentes a noviembre de 2026.</strong> Los ajustes se avisan con treinta días de anticipación, rigen desde el período siguiente y nunca son retroactivos.</p>
         </div>
       </div>
       </section><section className="section" id="faq" style={{background: 'var(--mist)'}}>
